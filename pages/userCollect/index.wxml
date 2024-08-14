@@ -1,0 +1,16 @@
+<view class="search" bind:tap="goSearch">
+  <image src="/images/sousuo.png" class="icon-search"></image>
+  <text>搜索用户</text>
+</view>
+<block wx:for="{{list}}" wx:key="*this">
+  <view class="bg-white bor-rad-20 padding-24 mb-24">
+    <view class="flex-between flex-align-center">
+      <view class="flex-between flex-align-center" bindtap="goCorporation" data-id="{{item.id}}">
+        <image src="{{item.avatar}}" class="mr-10 user-image" />
+        <text class="mr-10">{{item.nickname}}</text>
+        <view class="tag tag-authority" wx:if="{{item.identityState==2}}" />
+      </view>
+      <view bindtap="followed" data-id="{{item.id}}" class="collect-btn">取消关注</view>
+    </view>
+  </view>
+</block>

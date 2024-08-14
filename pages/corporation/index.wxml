@@ -1,0 +1,78 @@
+<view class="bg-white bor-rad-20 padding-24">
+  <view class="flex-between flex-align-center">
+    <view class="flex-between flex-align-center">
+      <image src="{{info.avatar}}" class="mr-10 user-image" mode="aspectFill" />
+      <text>{{info.nickname}}</text>
+    </view>
+    <view bindtap="followed" data-id="{{info.id}}" class="collect-btn {{info.isFollowed&&'care'}}">
+      {{info.isFollowed?'取消关注':'+关注'}}
+    </view>
+  </view>
+  <view class="mt-20">城市：{{info.city||''}}</view>
+  <view class="mt-20 flex-align-center">
+    <view style="flex:none">地址：</view>
+    <view class="text-ell">{{info.address||''}}</view>
+  </view>
+  <view class="mt-20 flex-align-center">
+    <view>手机号：</view>
+    <view class="call-btn" bindtap="showCall">拨打电话</view>
+  </view>
+  <!-- <view class="mt-20">微信：{{info.wxAccount||''}}</view> -->
+  <!-- <view class="mt-20">QQ：{{info.qqAccount||''}}</view> -->
+  <view class="mt-20">是否认证：{{info.identityState==2?'是':'否'}}</view>
+</view>
+<view class="mt-20" wx:if="{{info.identityState==2}}">认证信息</view>
+<view class="bg-white bor-rad-20 padding-24 user-identity {{unfoldFlag&&'unfold'}}" wx:if="{{info.identityState==2}}">
+  <view class="identity-cont">
+    <view class="flex mt-12">
+      <span>公司名称：</span>
+      <span>{{info.identity.companyName}}</span>
+    </view>
+    <view class="flex mt-12">
+      <span>认证时间：</span>
+      <span>{{info.identity.identifiedAt}}</span>
+    </view>
+    <view class="flex mt-12">
+      <span>公司介绍：</span>
+      <span>{{info.identity.brief}}</span>
+    </view>
+    <view class="flex mt-12">
+      <span>营业执照：</span>
+      <view class="swiper">
+        <image bindtap="preview" data-img="{{info.identity.businessLicense}}" src="{{info.identity.businessLicense}}" />
+      </view>
+    </view>
+    <view class="asd mt-12 flex">
+      <span>公司照片：</span>
+      <view class="swiper">
+        <swipers list="{{info.identity.photos}}" />
+      </view>
+    </view>
+  </view>
+  <view class="unfold-btn {{unfoldFlag&&'active'}}" bindtap="unfold">
+    <mp-icon icon="arrow" size="{{20}}" />
+  </view>
+</view>
+<view class="mt-24 mb-24" wx:if="{{list.length}}">他的商品</view>
+<grid-view type="masonry" cross-axis-gap="10" main-axis-gap="10" wx:if="{{list.length}}">
+  <view wx:for="{{list}}" wx:key="index">
+    <my-item item="{{item}}" noCorporation="{{false}}"></my-item>
+  </view>
+</grid-view>
+<!-- 打电话须知 -->
+<my-confirm switch="{{callSwitch}}" bind:sure="call" bind:hideConfirm="hideCall" title="" confirmText="拨打">
+  <view class="text-left">
+    <view class="theme-color fz-18 fw" wx:if="{{info.linker}}">{{info.linker}}</view>
+    <view class="theme-color fz-26 fw mt-12">{{info.mobile}}</view>
+    <view class="gary mt-12">
+      声明：本平台只提供机械设备的供求信息，无法核实商品的真实性以及价格是否合理。如果双方线下交易过程中发生纠纷，本平台不承担责任。请谨慎！
+    </view>
+    <view class="mt-12">联系时请说在“甄火机械网”看到的，感谢！</view>
+  </view>
+</my-confirm>
+
+<!-- 登录提醒弹窗 -->
+<my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">
+  <view>需要登录才能进行后续操作</view>
+  <view>是否前往登录?</view>
+</my-confirm>

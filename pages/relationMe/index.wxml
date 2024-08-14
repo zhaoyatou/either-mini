@@ -1,0 +1,11 @@
+<view class="price fz-20 ">甄火机械网：</view>
+<view style="text-indent:2em" class="fz-18">
+  商品展位不够用，开通VIP，提高商品曝光值，咨询平台广告位获取页面流量提升品牌，或者寻求合作推广。点击下方电话联系我们吧。
+</view>
+<view class="mt-20 fz-18">
+  服务电话：
+  <text bindtap="call" class="call">17812061710</text>
+</view>
+<view class="mt-20 fz-18">添加小助理微信：</view>
+<image show-menu-by-longpress="{{true}}" class="mt-10" mode="aspectFit" src="https://cdn.eithergo.com/image/2024-03-21/1_w_675_h_672_1711005436_4477.jpg" />
+<view class="text-center mt-10">长按二维码识别</view>

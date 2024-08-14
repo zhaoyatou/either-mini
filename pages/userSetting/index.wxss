@@ -1,0 +1,49 @@
+@import "../../app.wxss";
+
+page {
+  background-color: #f3f3f3;
+  padding: 24rpx;
+  height: 100%;
+}
+
+.save {
+  background-color: #07c160;
+  width: 184px;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 8px 0;
+  text-align: center;
+  color: #ffffff;
+  margin: 20px auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 15px;
+}
+
+.item:first-of-type {
+  border-radius: 20px 20px 0 0;
+}
+
+.item:last-of-type {
+  border-radius: 0 0 20px 20px;
+  border-bottom: none;
+}
+
+.item image {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.picker {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

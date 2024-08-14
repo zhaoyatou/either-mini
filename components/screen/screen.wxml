@@ -1,0 +1,26 @@
+<view class="picker-list">
+  <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{typeList}}">
+    <view class="type {{typeIndex&&'active'}}">
+      {{typeIndex?typeList[typeIndex]:'设备类型'}}
+      <span class="deg90">
+        <mp-icon icon="arrow" size="{{10}}" class="arrow" />
+      </span>
+    </view>
+  </picker>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{sortIndex}}" range="{{sortList}}" range-key="name">
+    <view class="sort {{categoryName&&'active'}}">
+      {{categoryName?categoryName:'分类'}}
+      <span class="deg90">
+        <mp-icon icon="arrow" size="{{10}}" class="arrow" />
+      </span>
+    </view>
+  </picker>
+  <picker mode="multiSelector" bindchange="bindMultiCityChange" bindcolumnchange="bindMultiCityColumnChange" value="{{regionIndex}}" range="{{regionList}}" range-key="name">
+    <view class="city {{region&&'active'}}">
+      {{region?region:'城市'}}
+      <span class="deg90">
+        <mp-icon icon="arrow" size="{{10}}" class="arrow" />
+      </span>
+    </view>
+  </picker>
+</view>

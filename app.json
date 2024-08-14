@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/index",
+    "pages/product/index",
+    "pages/sort/index",
+    "pages/login/index",
+    "pages/publish/index",
+    "pages/search/index",
+    "pages/detail/index",
+    "pages/userIdentity/index",
+    "pages/myCart/index",
+    "pages/favorite/index",
+    "pages/history/index",
+    "pages/suggest/index",
+    "pages/suggest/submit/index",
+    "pages/userSetting/index",
+    "pages/corporation/index",
+    "pages/userCollect/index",
+    "pages/searchUser/index",
+    "pages/relationMe/index",
+    "pages/vip/index",
+    "pages/teamwork/index"
+  ],
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/sort/index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/publish/index",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/product/index",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "甄火机械网",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true
+    }
+  }
+}

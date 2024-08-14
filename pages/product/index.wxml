@@ -1,0 +1,23 @@
+<scroll-view type="custom" enhanced="{{true}}" show-scrollbar="{{false}}" scroll-y style="width: 100%; height: 100%;" bindscrolltolower="getMore" refresher-enabled="{{true}}" bindrefresherrefresh="upList" refresher-triggered="{{refresh}}">
+  <sticky-section>
+    <view class="search-wrap mt-24">
+      <view class="input-wrap">
+        <image src="/images/sousuo.png" class="icon-search"></image>
+        <input placeholder="{{params.name?params.name:'搜索商品'}}" placeholder-class="search-fontsize" class="search-fontsize" type="text" confirm-type="search" bindconfirm='setSearchStorage' value="{{params.name}}" class="ipt" />
+      </view>
+    </view>
+    <view class="top-banner">
+      <block wx:for="{{banner}}" wx:key="*this">
+        <image src="{{item.image}}" mode="scaleToFill" bindtap="preview" data-item="{{item}}"></image>
+      </block>
+    </view>
+    <sticky-header class="sticky-header">
+      <my-screen bindsearchList="searchList" region="{{region}}" typeIndex="{{typeIndex}}" categoryName="{{categoryName}}" />
+    </sticky-header>
+    <grid-view type="masonry" cross-axis-gap="10" main-axis-gap="10" wx:if="{{list.length}}">
+      <view wx:for="{{list}}" wx:key="index">
+        <my-item item="{{item}}"></my-item>
+      </view>
+    </grid-view>
+  </sticky-section>
+</scroll-view>

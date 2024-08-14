@@ -1,0 +1,18 @@
+@import "../../app.wxss";
+
+page {
+  background-color: #ffffff;
+  padding: 24rpx;
+  height: 100%;
+}
+
+image {
+  display: block;
+  margin: 20rpx auto;
+  width: 60%;
+}
+
+.call {
+  text-decoration: underline;
+  color: blue;
+}

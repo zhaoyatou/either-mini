@@ -1,0 +1,128 @@
+<view class="swiper">
+  <swipers list="{{banner}}" />
+  <view class="swiper-bg"></view>
+</view>
+<mp-icon icon="arrow" bindtap="goBack" class="nav-bar" style="top:{{rect.top}}px;height:{{rect.height}}px" color="#ffffff" size="{{18}}" />
+<view class="cont" style="margin-top:calc({{(rect.top+rect.height+274)*2}}rpx)">
+  <view>
+    <view class="flex-between flex-align-end">
+      <span class="price">
+        <text class=" fz-28 fw">{{price}}</text>
+        <text class="fz-12">元</text>
+      </span>
+      <text class="gary">{{city}}</text>
+    </view>
+    <view class="flex-align-center gary">
+      <view class="mr-10">ID：{{id}}</view>
+      ｜
+      <view bindtap="sopyId">复制</view>
+    </view>
+    <view class="mt-12">
+      <view class="tag tag-new dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==1}}" />
+      <view class="tag tag-old dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==2}}" />
+      <view class="tag tag-beg dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==3}}" />
+      <text class="fz-18 fw">{{name}}</text>
+    </view>
+  </view>
+  <view>
+    <view class="flex-align-center">
+      <view class="gary mr-20">商品分类</view>
+      <view class="mr-20">{{parentCategoryName}}</view>
+      <view>/</view>
+      <view class="ml-20">{{categoryName}}</view>
+    </view>
+    <view wx:if="{{tags}}" class="flex-align-center mt-20">
+      <view class="gary mr-20">商品标签:</view>
+      <view>{{tags}}</view>
+    </view>
+    <view wx:if="{{degreeType==2}}" class="flex-align-center mt-20">
+      <view class="gary mr-20">新旧程度</view>
+      <view>{{degreeArr[degree]}}</view>
+    </view>
+    <view wx:if="{{degreeType==2}}" class="flex-align-center mt-20">
+      <view class="gary mr-20">购买时间</view>
+      <view>{{boughtAt}}</view>
+    </view>
+    <view wx:if="{{address}}" class="flex-align-center mt-20">
+      <text class="gary mr-20">详细地址</text>
+      <text>{{address}}</text>
+    </view>
+    <view wx:if="{{carriage}}" class="flex-align-center mt-20">
+      <text class="gary mr-20">运费说明</text>
+      <text>{{carriage}}</text>
+    </view>
+  </view>
+  <view>
+    <view class="flex-between flex-align-center">
+      <view class="flex-align-center" bindtap="goCorporation">
+        <image src="{{info.avatar}}" mode="aspectFill" class="user-image" />
+        <view class="flex-column">
+          <view>{{info.nickname}}</view>
+          <view class="gary" wx:if="{{info.identity.identifiedAt}}">
+            认证时间 {{info.identity.identifiedAt}}
+          </view>
+        </view>
+      </view>
+      <view class="collect-btn" bindtap="followed" wx:if="{{info.identity.identifiedAt&&!info.isFollowed}}">
+        +关注
+      </view>
+      <view class="collect-btn care" bindtap="followed" wx:if="{{info.identity.identifiedAt&&info.isFollowed}}">
+        取消关注
+      </view>
+      <view class="collect-btn care" wx:if="{{!info.identity.identifiedAt}}">未认证</view>
+    </view>
+  </view>
+  <view class="tab-list">
+    <view class="flex-around flex-align-center tab-head">
+      <view class="{{tabView=='brief'&&'active'}}" bindtap="switchTab" data-view="brief">商品简介</view>
+      <view class="{{tabView=='detail'&&'active'}}" bindtap="switchTab" data-view="detail">
+        商品详情
+      </view>
+      <view class="{{tabView=='reco'&&'active'}}" bindtap="switchTab" data-view="reco">相关推荐</view>
+    </view>
+    <view class="tab-cont">
+      <view class="brief">{{brief}}</view>
+      <view class="detail">
+        <block wx:for="{{images}}" wx:key="*this">
+          <image src="{{item}}" class="mb-24" bindtap="preview" data-index="{{index}}" />
+        </block>
+      </view>
+      <view class="reco">
+        <view class="text-center">相关推荐</view>
+        <grid-view type="masonry" class="mt-20" cross-axis-gap="10" main-axis-gap="10" wx:if="{{list.length}}">
+          <view wx:for="{{list}}" wx:key="index">
+            <my-item item="{{item}}"></my-item>
+          </view>
+        </grid-view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class="favorite fz-12" bindtap="setFavorite" wx:if="{{!isFavorite}}">
+    <image src="/images/no-shoucang.png" mode="widthFix" class="shoucang" />
+    收藏
+  </view>
+  <view class="favorite clear fz-12" bindtap="setFavorite" wx:if="{{isFavorite}}">
+    <image src="/images/shoucang.png" mode="widthFix" class="shoucang" />
+    已收藏
+  </view>
+  <view bindtap="showCall" class="call-btn">电话联系</view>
+</view>
+<!-- 打电话须知 -->
+<my-confirm switch="{{callSwitch}}" bind:sure="call" bind:hideConfirm="hideCall" title="" confirmText="拨打">
+  <view class="text-left">
+    <view class="theme-color fz-18 fw" wx:if="{{linker}}">{{linker}}</view>
+    <view class="theme-color fz-26 fw mt-12">{{linkerMobile}}</view>
+    <view class="gary mt-12">
+      声明：本平台只提供机械设备的供求信息，无法核实商品的真实性以及价格是否合理。如果双方线下交易过程中发生纠纷，本平台不承担责任。请谨慎！
+    </view>
+    <view class="mt-12">联系时请说在“甄火机械网”看到的，感谢！</view>
+  </view>
+</my-confirm>
+
+<!-- 登录提醒弹窗 -->
+<my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">
+  <view>需要登录才能进行后续操作</view>
+  <view>是否前往登录?</view>
+</my-confirm>

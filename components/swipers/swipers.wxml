@@ -1,0 +1,14 @@
+<view class="swiper">
+  <swiper autoplay="true" class="swipers" bindchange="changeCurrent">
+    <block wx:for="{{list}}" wx:key="*this">
+      <swiper-item bindtap="preview" data-index="{{index}}">
+        <view class="swiper-item">
+          <image src="{{item.image}}" mode="scaleToFill" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper-dots" wx:if="{{list.length>1}}">
+    <view wx:for="{{list}}" wx:key="*this" class="{{current==index&&'active'}}"></view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "my-screen": "/components/screen/screen",
+    "my-item": "/components/dataItem/dataitem",
+    "swipers": "/components/swipers/swipers"
+  },
+  "componentFramework": "glass-easel"
+}

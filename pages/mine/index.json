@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "my-confirm": "/components/confirm/confirm",
+    "swipers": "/components/swipers/swipers"
+  },
+  "navigationBarTitleText": "我的"
+}

@@ -1,0 +1,324 @@
+page {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 60px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 60px);
+  overflow-y: scroll;
+  background-color: #f3f2f3;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+image {
+  display: block;
+}
+
+swiper {
+  height: 100%;
+}
+
+.tag {
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  width: 30px;
+  height: 40rpx;
+  padding: 0 36rpx;
+  position: relative;
+  color: #ffffff;
+}
+
+.tag::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.tag.tag-new {
+  background-image: linear-gradient(-45deg, #0688FB, #0E98F8, #1FBFF2);
+}
+
+.tag.tag-new::after {
+  content: "新机";
+}
+
+.tag.tag-old {
+  background-image: linear-gradient(-45deg, #FB6590, #FF79A1, #FEA3BF);
+}
+
+.tag.tag-old::after {
+  content: "二手";
+}
+
+.tag.tag-beg {
+  background-image: linear-gradient(-45deg, #F82E2E, #FF4848, #FF5A5A);
+}
+
+.tag.tag-beg::after {
+  content: "求购";
+}
+
+.tag.tag-authority {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 251, 0);
+  font-weight: bold;
+}
+
+.tag.tag-authority::after {
+  content: "认证";
+}
+
+.price {
+  color: #FF5A5A;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.mr-10 {
+  margin-right: 10rpx;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}
+
+.ml-20 {
+  margin-left: 20rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mt-12 {
+  margin-top: 12rpx;
+}
+
+.mt-8 {
+  margin-top: 8rpx;
+}
+
+.mt-24 {
+  margin-top: 24rpx;
+}
+
+.padding-24 {
+  padding: 24rpx;
+}
+
+.padding-12 {
+  padding: 12rpx;
+}
+
+.pl-pr-12 {
+  padding: 0 12rpx;
+}
+
+.pl-40 {
+  padding-left: 40rpx;
+}
+
+.margin-r-24 {
+  margin-right: 24rpx;
+}
+
+.margin-l-24 {
+  margin-left: 24rpx;
+}
+
+.mb-24 {
+  margin-bottom: 24rpx;
+}
+
+.mb-12 {
+  margin-bottom: 12rpx;
+}
+
+.bor-rad-20 {
+  border-radius: 20rpx;
+}
+
+.fz-12 {
+  font-size: 24rpx;
+}
+
+.fz-10 {
+  font-size: 20rpx;
+}
+
+.fz-14 {
+  font-size: 28rpx;
+}
+
+.fz-16 {
+  font-size: 32rpx;
+}
+
+.fz-18 {
+  font-size: 36rpx;
+}
+
+.fz-20 {
+  font-size: 40rpx;
+}
+
+.fz-24 {
+  font-size: 48rpx;
+}
+
+.fz-26 {
+  font-size: 52rpx;
+}
+
+.fz-28 {
+  font-size: 56rpx;
+}
+
+.fw {
+  font-weight: bold;
+}
+
+.fs-i {
+  font-style: italic;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  height: 35px;
+  color: #9E9E9D;
+}
+
+.sticky-header {
+  display: flex;
+  position: sticky;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  z-index: 100;
+  background-color: #f3f2f3;
+}
+
+.height-auto {
+  height: auto !important;
+}
+
+.user-image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-ell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-ell-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 18px;
+  word-break: break-all;
+  white-space: break-spaces;
+}
+
+.collect-btn {
+  background-color: #027AFF;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #fff;
+  padding: 10rpx 30rpx;
+}
+
+.collect-btn.care {
+  filter: grayscale(1);
+}
+
+
+.icon-search {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 25rpx;
+  margin-right: 18rpx;
+}
+
+.theme-color {
+  color: #027AFF;
+}
+
+.gary {
+  color: #999999;
+}
+
+.shoucang {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+.dis-inlint {
+  display: inline;
+}
+
+.dis-in-block {
+  display: inline-block;
+}

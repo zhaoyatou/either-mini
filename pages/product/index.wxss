@@ -1,0 +1,63 @@
+@import "../../app.wxss";
+
+page {
+  background-color: #ffffff;
+  padding: 0 24rpx 24rpx 24rpx;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.top-banner {
+  width: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+  height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.top-banner image {
+  width: 49%;
+  height: 48%;
+  border-radius: 10px;
+}
+
+.top-banner image:first-of-type,
+.top-banner image:nth-of-type(2) {
+  margin-bottom: 2%;
+}
+
+.search-wrap {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.search-fontsize {
+  color: gray;
+  font-size: 24rpx;
+  line-height: 70rpx;
+}
+
+.input-wrap {
+  background-color: #ffffff;
+  border-radius: 50px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 35px;
+  width: 100%;
+}
+
+.ipt {
+
+  height: 35px;
+  line-height: 35px;
+  color: #333333;
+  font-size: 24rpx;
+  border: none;
+  outline: none;
+  width: 460rpx;
+}

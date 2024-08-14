@@ -1,0 +1,26 @@
+<view class="search-wrap mt-24">
+  <view class="input-wrap">
+    <image src="/images/sousuo.png" class="icon-search"></image>
+    <input placeholder="{{placehoder}}" placeholder-class="search-fontsize" class="search-fontsize" type="text" confirm-type="search" bindconfirm='setSearchStorage' value="{{keyword}}" class="ipt" />
+  </view>
+</view>
+<view>
+  <view class="h1" wx:if="{{hotKeywords.length>0}}">热门搜索</view>
+  <view class="result-con hot">
+    <view wx:for="{{hotKeywords}}" wx:key="index" bindtap="clickKeySearch" data-keystr="{{item.keyword}}">
+      {{item.keyword}}
+    </view>
+  </view>
+  <view class="h1" wx:if="{{ getSearch.length>0 }}">
+    历史搜索
+    <view class="delete" bindtap="clearSearchStorage">清空</view>
+  </view>
+  <view class="result-con history">
+    <view wx:for="{{getSearch}}" wx:key="index" bindtap='clickKeySearch' data-keystr="{{item}}">
+      {{item}}
+    </view>
+  </view>
+</view>
+<view class="bot-banner">
+  <swipers list="{{banner}}" />
+</view>

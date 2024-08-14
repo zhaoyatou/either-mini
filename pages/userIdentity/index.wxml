@@ -1,0 +1,68 @@
+<view class="identity-page" style="height: calc(100vh - {{rect.bottom}}px);">
+  <view class="identity-bg"></view>
+  <view class="identity-tips" wx:if="{{type!=0}}">修改信息重新认证时，您的商品会自动下架。认证通过后，需要您手动进行上架！</view>
+  <view class="content" style="height:100%">
+    <view class="identity-detail ">
+      <view class="item">
+        <span class="star">公司名称</span>
+        <input type="text" value="{{companyName}}" bindinput="inputChange" placeholder="认证通过后会成为您的昵称" data-name="companyName" />
+      </view>
+      <view class="item height-auto">
+        <span>公司简介</span>
+        <textarea style="height:5em" maxlength="500" value="{{brief}}" bindinput="inputChange" placeholder="请简述公司介绍" data-name="brief" />
+      </view>
+      <view class="item height-auto">
+        <span class="star">营业执照</span>
+        <view class="detail-imgs">
+          <view class="xj" bindtap="selectPic" data-image="businessLicenseImage" data-length="1" wx:if="{{!businessLicenseImage.length}}">
+            <image src="/images/xiangji.png" mode="aspectFit" />
+          </view>
+          <view wx:else>
+            <view class="img-item" wx:for="{{businessLicenseImage}}" wx:key="index">
+              <view class="delete" data-index="{{index}}" data-image="businessLicenseImage" bindtap="delete">
+                x
+              </view>
+              <image src="{{item.src}}" mode="aspectFill" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item height-auto">
+        <span class="star">法人身份证</span>
+        <view class="detail-imgs">
+          <view class="xj" bindtap="selectPic" data-image="identityCardImage" data-length="1" wx:if="{{!identityCardImage.length}}">
+            <image src="/images/xiangji.png" mode="aspectFit" />
+          </view>
+          <view wx:else>
+            <view class="img-item" wx:for="{{identityCardImage}}" wx:key="index">
+              <view class="delete" data-index="{{index}}" data-image="identityCardImage" bindtap="delete">
+                x
+              </view>
+              <image src="{{item.src}}" mode="aspectFill" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item height-auto">
+        <span>公司照片</span>
+        <view class="detail-imgs">
+          <view class="img-item" wx:for="{{photosImage}}" wx:key="index">
+            <view class="delete" data-index="{{index}}" data-image="photosImage" bindtap="delete">
+              x
+            </view>
+            <image src="{{item.src}}" mode="aspectFill" />
+          </view>
+          <view class="xj" bindtap="selectPic" data-image="photosImage" data-length="6" wx:if="{{photosImage.length<6}}">
+            <image src="/images/xiangji.png" mode="aspectFit" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="submit" bindtap="submit">发布</view>
+  </view>
+</view>
+<!-- 登录提醒弹窗 -->
+<my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">
+  <view>需要登录才能进行后续操作</view>
+  <view>是否前往登录?</view>
+</my-confirm>

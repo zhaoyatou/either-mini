@@ -1,0 +1,68 @@
+<view class="flex-between padding-24 bg-white bor-rad-20 ">
+  <view>
+    <span>总数量：</span>
+    <span class="price">{{userinfo.totalMachineNum}}</span>
+  </view>
+  <view>
+    <span>允许上架数量：</span>
+    <span class="price">{{userinfo.allowMachineNum}}</span>
+  </view>
+  <view>
+    <span>已上架：</span>
+    <span class="price">{{userinfo.onSaleMachineNum}}</span>
+  </view>
+</view>
+<view wx:for="{{list}}" wx:key="*this" class="mt-20">
+  <block class="my-item">
+    <view class="flex-align-center padding-12 bg-white bor-rad-20 item">
+      <view>
+        <view class="tag tag-new" wx:if="{{item.degreeType==1}}" />
+        <view class="tag tag-old" wx:if="{{item.degreeType==2}}" />
+        <view class="tag tag-beg" wx:if="{{item.degreeType==3}}" />
+        <image src="{{item.cover}}" />
+        <view class="flex-align-center">
+          <view class="flex-align-center  fz-12">
+            <view class="mr-10 flex-align-center">
+              <mp-icon icon="eyes-on" color="#999999" />
+              {{item.views}}
+            </view>
+            <view class="flex-align-center">
+              <mp-icon type="field" icon="star" color="#999999" />
+              {{item.favorites}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="text-ell-2">{{item.name}}</view>
+        <view class="price fz-12">价格：{{item.price}}元</view>
+        <view class="fz-12">城市：{{item.city}}</view>
+        <view class="fz-12" wx:if="{{item.auditState==1&&item.state==1}}">
+          上架时间：{{item.launchedAt}}
+        </view>
+        <view class="fz-12" wx:if="{{item.auditState==1&&item.state==1}}">
+          到期时间：{{item.takedownAt}}
+        </view>
+        <view class="fz-12">
+          状态：
+          <span wx:if="{{!item.auditState}}" class="state">审核中</span>
+          <span wx:if="{{item.auditState==2}}" class="state">审核拒绝</span>
+          <span wx:if="{{item.auditState==1&&!item.state}}" class="state">待上架</span>
+          <span wx:if="{{item.auditState==1&&item.state==1}}" class="state">上架中</span>
+          <span wx:if="{{item.auditState==1&&item.state==2}}" class="state">下架</span>
+        </view>
+        <view wx:if="{{item.auditState==2}}" class="fz-12">拒绝原因：{{item.rejectReason}}</view>
+      </view>
+    </view>
+    <view class="operation">
+      <view wx:if="{{item.auditState==1&&item.state!==1}}" class="update" bindtap="upItem" data-item="{{item}}">
+        上架
+      </view>
+      <view wx:if="{{item.auditState&&item.state===1}}" class="launche" bindtap="launItem" data-item="{{item}}">
+        下架
+      </view>
+      <view class="amend" bindtap="amend" data-item="{{item}}">编辑</view>
+      <view class="dele" bindtap="delItem" data-item='{{item}}'>删除</view>
+    </view>
+  </block>
+</view>

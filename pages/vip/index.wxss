@@ -1,0 +1,109 @@
+page {
+  background-color: #292929;
+  overflow: hidden;
+}
+
+.swiper {
+  padding: 48rpx 48rpx 66rpx;
+}
+
+swiper {
+  height: 345rpx;
+}
+
+swiper image {
+  width: 100%;
+}
+
+swiper-item {
+  position: relative;
+}
+
+swiper-item .fot {
+  position: absolute;
+  left: 44rpx;
+  bottom: 32rpx;
+}
+
+.fot .vip-btn {
+  width: 124rpx;
+  height: 48rpx;
+  border-radius: 100px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 48rpx;
+  margin-right: 16rpx;
+}
+
+.progress {
+  margin: 0 100rpx;
+  height: 4rpx;
+  background-color: #999999;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.item-radio {
+  width: 12rpx;
+  height: 12rpx;
+  margin-top: -4rpx;
+  border-radius: 50px;
+  background-color: #999999;
+  position: relative;
+}
+
+.item-radio text {
+  position: absolute;
+  top: 1em;
+  white-space: nowrap;
+  color: #999999;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-radio.active {
+  background-color: #ffffff;
+}
+
+.item-radio .active {
+  color: #ffffff;
+}
+
+.progress-bg {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+}
+
+.cont {
+  background-color: #F9F9F9;
+  border-radius: 18px 18px 0 0;
+  padding: 60rpx 24rpx;
+  margin-top: 100rpx;
+  height: 100vh;
+}
+
+.rights {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 64rpx 46rpx;
+  min-height: 460rpx;
+  margin-top: 32rpx;
+}
+
+.rights-item {
+  display: flex;
+  align-items: center;
+}
+
+.rights-radio {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10px;
+  margin-right: 14rpx;
+}

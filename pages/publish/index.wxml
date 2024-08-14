@@ -1,0 +1,160 @@
+<view class="publish-page" style="height: calc(100vh - {{rect.bottom}}px);">
+  <view class="publish-bg"></view>
+  <!-- <view class="navbar" style="height:{{rect.height}}px;top:{{rect.top}}px">发布商品</view> -->
+  <view class="publish-tips">
+    您还可上架{{userinfo.allowMachineNum||'?'}}件商品，发布通过审核后自动上架
+    <image src="/images/bangzhu.png" class="rule" bindtap="hideRule" />
+  </view>
+  <view class="content" style="height:calc(100% - {{60}}px)">
+    <view class="goods-detail">
+      <view class="item">
+        <span class="star fz-16 fw">商品信息</span>
+      </view>
+      <view class="item">
+        <span class="star fw">商品名称</span>
+        <input type="text" value="{{product.name}}" bindinput="inputChange" placeholder="请输入商品名称" data-name="product.name" />
+      </view>
+      <view class="item">
+        <span class="star fw">商品价格</span>
+        <input type="number" value="{{product.price}}" bindinput="inputChange" placeholder="请输入商品价格" data-name="product.price" />
+        元
+      </view>
+      <view class="item">
+        <span class="star fw">设备类型</span>
+        <view wx:for="{{typeList}}" wx:key="item" bindtap="changeType" data-value="{{item.value}}" class="{{product.degreeType==item.value&&'active'}} type-btn">
+          {{item.label}}
+        </view>
+      </view>
+      <view class="item">
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{sortIndex}}" range="{{sortList}}" range-key="name">
+          <view class="sort">
+            <view>
+              <span class="star fw">分类</span>
+              <text wx:if="{{!categoryName}}" class="default-color">请选择分类</text>
+              {{categoryName}}
+            </view>
+            <mp-icon icon="arrow" size="{{10}}" />
+          </view>
+        </picker>
+      </view>
+      <view class="item">
+        <span class="fw">标签</span>
+        <input type="text" value="{{product.tags}}" bindinput="inputChange" placeholder="商品品牌、型号信息" data-name="product.tags" />
+      </view>
+      <view class="item" wx:if="{{product.degreeType==2}}">
+        <picker bindchange="bindPickerChangeDegree" value="{{product.degree}}" range="{{degreeArr}}">
+          <view class="picker">
+            <view>
+              <span class="star fw">新旧程度</span>
+              {{degreeArr[product.degree]}}
+            </view>
+            <mp-icon icon="arrow" size="{{10}}" />
+          </view>
+        </picker>
+      </view>
+      <view class="item" wx:if="{{product.degreeType==2}}">
+        <picker mode="date" value="{{product.boughtAt}}" bindchange="bindDateChangeBoughtAt">
+          <view class="picker">
+            <view>
+              <span class="star fw">购买时间</span>
+              <text wx:if="{{!product.boughtAt}}" class="default-color">请选择</text>
+              {{product.boughtAt}}
+            </view>
+            <image src="/images/rili.png" mode="aspectFit" style="width: 20px;height:20px" />
+          </view>
+        </picker>
+      </view>
+      <view class="item  height-auto">
+        <span class="fw">商品介绍</span>
+        <textarea style="height:5em" maxlength="500" value="{{product.brief}}" bindinput="inputChange" placeholder="请简述商品信息" data-name="product.brief" />
+      </view>
+      <view class="item  height-auto">
+        <span class="fw">运费说明</span>
+        <input type="text" value="{{product.carriage}}" bindinput="inputChange" placeholder="填写商品运费信息，无运费填写“包邮”" data-name="product.carriage" />
+      </view>
+      <view class="item height-auto">
+        <span class="star fw">封面图</span>
+        <view class="detail-imgs">
+          <view class="xj" bindtap="selectPic" data-image="coverImage" data-length="1" wx:if="{{!coverImage.length}}">
+            <image src="/images/xiangji.png" mode="aspectFit" />
+          </view>
+          <view class="img-item" wx:for="{{coverImage}}" wx:key="index">
+            <view class="delete" data-index="{{index}}" data-image="coverImage" bindtap="delete">
+              x
+            </view>
+            <image src="{{item.src}}" mode="aspectFill" />
+          </view>
+        </view>
+      </view>
+      <view class="item height-auto">
+        <span class="fw">
+          商品详情
+          <text class="fz-12">（最多上传10张）</text>
+        </span>
+        <view class="detail-imgs">
+          <view class="img-item" wx:for="{{detailsImage}}" wx:key="index">
+            <view class="delete" data-index="{{index}}" data-image="detailsImage" bindtap="delete">
+              x
+            </view>
+            <image src="{{item.src}}" mode="aspectFill" />
+          </view>
+          <view class="img-item xj" bindtap="selectPic" wx:if="{{detailsImage.length<10}}" data-image="detailsImage">
+            <image src="/images/xiangji.png" mode="aspectFit" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="user-detail">
+      <view class="item">
+        <span class="star fz-16 fw">
+          联系方式
+          <text class="fz-12">（可在“个人中心”进行预设置）</text>
+        </span>
+      </view>
+      <view class="item">
+        <span class="star fw">联系电话</span>
+        <input type="number" disabled value="{{product.linkerMobile}}" bindinput="inputChange" data-name="product.linkerMobile" wx:if="{{product.linkerMobile}}" />
+        <button class="btn-orange" open-type="getPhoneNumber" wx:else bindgetphonenumber="getPhoneNumber">
+          去绑定
+        </button>
+      </view>
+      <view class="item">
+        <picker mode="region" level="city" bindchange="bindRegionChange" value="{{region}}">
+          <view class="city">
+            <view>
+              <span class="star fw">城市</span>
+              {{region.length?region[1]:userinfo.city}}
+            </view>
+            <mp-icon icon="arrow" size="{{10}}" />
+          </view>
+        </picker>
+      </view>
+      <view class="item">
+        <span class="fw">联系人</span>
+        <input type="text" value="{{product.linker}}" placeholder="请输入联系人" bindinput="inputChange" data-name="product.linker" />
+      </view>
+      <view class="item">
+        <span class="fw">地址</span>
+        <input type="text" value="{{product.address}}" placeholder="请输入地址" bindinput="inputChange" data-name="product.address" />
+      </view>
+    </view>
+    <view class="submit" bindtap="commit">发布</view>
+  </view>
+</view>
+<!-- 登录提醒弹窗 -->
+<my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">
+  <view>需要登录才能进行后续操作</view>
+  <view>是否前往登录?</view>
+</my-confirm>
+<!-- 规则弹框 -->
+<my-confirm switch="{{ruleSwitch}}" bind:sure="hideRule" bind:hideConfirm="hideRule" closeSwitch="{{false}}">
+  <view class="text-left">1. 商品发布后，系统会先进行审核，审核通过后会自动上架。</view>
+  <view class="text-left">2. 商品上架的有效期为30天，到期会自动下架，请您注意关注商品的上架状态。</view>
+  <view class="text-left">3. 注册用户可同时发布上架2个商品，进行用户认证后可免费发布5个商品。如果您需要上架展示更多商品，请点击个人中心-联系我们</view>
+</my-confirm>
+<!-- 发布弹框 -->
+<my-confirm switch="{{issueSwitch}}" bind:sure="submit" bind:hideConfirm="hideIssue" title="商品发布须知" confirmText="发布">
+  <view class="text-left">1. 商品发布后，系统会先进行审核，审核通过后会自动上架。</view>
+  <view class="text-left">2. 商品上架的有效期为30天，到期会自动下架，请您注意关注商品的上架状态。</view>
+  <view class="text-left">3. 注册用户可同时发布上架2个商品，进行用户认证后可免费发布5个商品。如果您需要上架展示更多商品，请点击个人中心-联系我们</view>
+</my-confirm>

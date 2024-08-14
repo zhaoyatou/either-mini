@@ -1,0 +1,20 @@
+<view class="main">
+  <view class="login-icon">
+    <image src="https://cdn.eithergo.com/image/2024-02-22/1_w_446_h_364_1708591420_a1fd.jpg" mode="aspectFit"></image>
+  </view>
+  <button wx:if="{{ isSelected==false}}" class="btn-orange" bindtap="agree">授权登录</button>
+  <button wx:if="{{ isSelected==true}}" class="btn-orange" bindtap="stepOneLogin">授权登录</button>
+</view>
+<!-- <view class="protocol">
+  <view class="check-box" bindtap="check">
+    <image src="/image/dnocheck.png" wx:if="{{!isSelected}}" />
+    <image src="/image/dcheck.png" wx:if="{{isSelected}}" />
+  </view>
+  <view class="txt">
+    注册登录代表您同意
+    <navigator class="nav" url="{{privacyUrl}}" hover-class="none">《52TOYS官方商城协议》</navigator>
+    和
+    <navigator class="nav" url="{{userUrl}}" hover-class="none">《52TOYS官方商城隐私政策》</navigator>
+  </view>
+</view> -->
+<privacy-popup id="privacy-popup-index"></privacy-popup>

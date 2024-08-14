@@ -1,0 +1,30 @@
+<view wx:for="{{list}}" wx:key="*this" class="mt-20">
+  <view>{{item.updatedAt}}</view>
+  <block class="my-item">
+    <view class="flex-align-center padding-12 bg-white bor-rad-20 item" bindtap="goDetil" data-item="{{item}}">
+      <view>
+        <view wx:if="{{item.state==2}}" class="mask">已下架</view>
+        <image src="{{item.cover}}" />
+        <view class="flex-align-center flex-between">
+          <view class="tag tag-new" wx:if="{{item.degreeType==1}}" />
+          <view class="tag tag-old" wx:if="{{item.degreeType==2}}" />
+          <view class="tag tag-beg" wx:if="{{item.degreeType==3}}" />
+        </view>
+      </view>
+      <view>
+        <view>
+          <view class="text-ell-2">{{item.name}}</view>
+          <view class="price fz-12">价格：{{item.price}}元</view>
+          <view class="fz-12">城市：{{item.city}}</view>
+        </view>
+        <view class="flex-between flex-align-center fz-12">
+          <view class="flex-align-center">
+            <image src="{{item.userAvatar}}" mode="aspectFill" class="user-image" />
+            <view class="text-ell" style="width: 10em;">{{item.nickname}}</view>
+          </view>
+          <view class="tag tag-authority" wx:if="{{item.isIdentity}}" />
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,60 @@
+<scroll-view scroll-y bindscrolltolower="getMore" enable-passive>
+  <view class="flex-align-center spread">
+    <view>
+      <view class="fz-18">我的推广码：</view>
+      <button open-type="share" class="spread-btn">一键转发推广</button>
+    </view>
+    <image src="{{userinfo.userInviter.miniCodeImage}}" bindtap="preview" />
+  </view>
+  <view class="flex-align-center flex-between">
+    <picker bindchange="bindPickerChange" value="{{params.showType-1}}" range="{{array}}">
+      <view class="picker">
+        {{array[params.showType-1]}}
+        <span class="deg90">
+          <mp-icon icon="arrow" size="{{10}}" />
+        </span>
+      </view>
+    </picker>
+    <picker mode="date" value="{{params.showBegin}}" start="2022-01-01" end="2099-01-01" data-key="params.showBegin" bindchange="bindDateChange">
+      <view class="picker" style="width:120px">
+        {{params.showBegin||'开始时间'}}
+        <span class="deg90">
+          <mp-icon icon="arrow" size="{{10}}" />
+        </span>
+      </view>
+    </picker>
+    <picker mode="date" value="{{params.showEnd}}" start="2022-01-01" end="2099-01-01" data-key="params.showEnd" bindchange="bindDateChange">
+      <view class="picker" style="width:120px">
+        {{params.showEnd||'结束时间'}}
+        <span class="deg90">
+          <mp-icon icon="arrow" size="{{10}}" />
+        </span>
+      </view>
+    </picker>
+  </view>
+  <view class="flex-align-center flex-between">
+    <view class="flex-align-center">
+      用户ID
+      <input value="{{params.userId}}" bindinput="inputChange" data-name="params.userId" />
+    </view>
+    <view class="search-btn" bindtap="search">查询</view>
+    <view>共计{{totalCount}}人</view>
+  </view>
+  <view class="list mt-20" wx:if="{{list.length}}">
+    <view class="item" wx:for="{{list}}" wx:key="index">
+      <view>
+        用户ID：{{item.userId}}
+        <text class="copy-id" bindtap="sopyId" data-id="{{item.userId}}">复制</text>
+      </view>
+      <view>用户昵称：{{item.nickname}}</view>
+      <view>注册时间：{{item.registerTime}}</view>
+      <view wx:if="{{item.businessType}}">付费金额：{{item.cost}}</view>
+      <view wx:if="{{item.businessType}}">
+        付费事项：
+        <text wx:if="{{item.businessType==1}}">广告位</text>
+        <text wx:if="{{item.businessType==2}}">开通VIP</text>
+      </view>
+      <view wx:if="{{item.businessType}}">付费时间：{{item.payTime}}</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-confirm": "/components/confirm/confirm"
+  },
+  "navigationBarTitleText": "用户认证"
+}

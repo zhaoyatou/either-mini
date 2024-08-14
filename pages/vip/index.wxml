@@ -1,0 +1,42 @@
+<view class="swiper">
+  <swiper current="{{swiperIndex}}" bindchange="changeSwiperIndex">
+    <block wx:for="{{vipList}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.image}}" mode="widthFix" />
+        <view class="fot flex-align-center">
+          <view class="vip-btn" style="background-color:{{item.btnBgC}}" wx:if="{{item.isVip}}">
+            {{item.btnTxt}}
+          </view>
+          <view class="vip-btn" style="background-color:{{item.btnBgC}}" wx:if="{{!item.isVip}}" bindtap="goTo" data-index="{{index}}">
+            {{item.notBtnTxt}}
+          </view>
+          <view class="vip-expire fz-12" style="color:{{item.btnBgC}}" wx:if="{{item.isVip}}">
+            {{item.expire}}
+          </view>
+          <view class="vip-expire fz-12" style="color:{{item.btnBgC}}" wx:if="{{!item.isVip}}">
+            {{item.expire}}
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="progress">
+  <view wx:for="{{5}}" wx:key="index" class="item-radio {{index<=swiperIndex&&'active'}}">
+    <text wx:if="{{index==0}}" class="{{index<=swiperIndex&&'active'}}">普通</text>
+    <text wx:if="{{index==1}}" class="{{index<=swiperIndex&&'active'}}">认证</text>
+    <text wx:if="{{index==2}}" class="{{index<=swiperIndex&&'active'}}">黄金</text>
+    <text wx:if="{{index==3}}" class="{{index<=swiperIndex&&'active'}}">铂金</text>
+    <text wx:if="{{index==4}}" class="{{index<=swiperIndex&&'active'}}">钻石</text>
+  </view>
+  <view class="progress-bg" style="width: calc({{((swiperIndex)/4)*100}}%);"></view>
+</view>
+<view class="cont">
+  <view class="fz-18 fw pl-40">{{vipList[swiperIndex].rightsTit}}</view>
+  <view class="rights">
+    <view wx:for="{{vipList[swiperIndex].rights}}" wx:key="*this" class="rights-item">
+      <view class="rights-radio" style="background-color:{{vipList[swiperIndex].btnBgC}}"></view>
+      {{item}}
+    </view>
+  </view>
+</view>

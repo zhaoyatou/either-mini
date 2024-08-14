@@ -1,0 +1,70 @@
+@import "../../app.wxss";
+
+page {
+  background-color: #f3f3f3;
+  padding: 24rpx;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.swiper {
+  position: relative;
+  border-radius: 30rpx;
+  width: 70%;
+  padding-top: 40%;
+  overflow: hidden;
+}
+
+.user-identity {
+  height: 9em;
+  position: relative;
+}
+
+.identity-cont {
+  height: 100%;
+  overflow: hidden;
+}
+
+.user-identity.unfold {
+  height: auto;
+}
+
+.unfold-btn {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.unfold-btn.active {
+  transform: translateX(-50%) rotate(-90deg);
+}
+
+.identity-cont>view span:first-of-type {
+  display: inline-block;
+  margin-right: 30rpx;
+  white-space: nowrap;
+}
+
+.swiper swipers,
+.swiper>image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.call-btn {
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  width: 122rpx;
+  height: 54rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background-color: #027AFF;
+  border: 1px solid #027AFF;
+  color: #ffffff;
+}

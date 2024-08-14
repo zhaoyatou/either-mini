@@ -1,0 +1,43 @@
+<view>
+  <view class="item">
+    <view>头像</view>
+    <image wx:if="{{!userAvatar}}" src="{{userinfo.avatar}}" bindtap="upAvatar" />
+    <image wx:if="{{userAvatar}}" src="https://cdn.eithergo.com/{{userAvatar}}" />
+  </view>
+  <view class="item">
+    <picker mode="region" level="city" style="width: 100%;" bindchange="bindRegionChange" value="{{city}}">
+      <view class="picker">
+        <view class="flex-align-center">
+          <view style="width: 100px;">设置城市</view>
+          {{city.length?city[1]:(userinfo.city||'请选择')}}
+        </view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </view>
+    </picker>
+  </view>
+  <view class="item">
+    <view class="flex-align-center">
+      <view style="width: 100px;">地址</view>
+      <input value="{{address}}" placeholder="请输入地址" bindinput="inputChange" data-name="address" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="flex-align-center">
+      <view style="width: 100px;">联系人</view>
+      <input value="{{linker}}" placeholder="请输入联系人" bindinput="inputChange" data-name="linker" />
+    </view>
+  </view>
+  <!-- <view class="item">
+    <view class="flex-align-center">
+      <view style="width: 100px;">微信</view>
+      <input value="{{wxAccount}}" placeholder="请输入微信" bindinput="inputChange" data-name="wxAccount" />
+    </view>
+  </view> -->
+  <!-- <view class="item">
+    <view class="flex-align-center">
+      <view style="width: 100px;">QQ号</view>
+      <input value="{{qqAccount}}" placeholder="请输入QQ号" bindinput="inputChange" data-name="qqAccount" />
+    </view>
+  </view> -->
+</view>
+<view class="save" bindtap="save">保存</view>

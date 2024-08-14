@@ -1,0 +1,23 @@
+<view class="search-wrap  mt-24">
+  <view class="input-wrap">
+    <image src="/images/sousuo.png" class="icon-search"></image>
+    <input placeholder="{{placehoder}}" placeholder-class="search-fontsize" class="search-fontsize" type="text" confirm-type="search" bindconfirm='setSearchUser' value="{{nickname}}" focus="true" class="ipt" />
+  </view>
+</view>
+<view wx:if="{{banner.length}}" class="top-banner">
+  <swipers list="{{banner}}" />
+</view>
+<block wx:for="{{list}}" wx:key="*this">
+  <view class="bg-white bor-rad-20 padding-24 mb-24">
+    <view class="flex-between flex-align-center" bindtap="goCorporation" data-id="{{item.id}}">
+      <view class="flex-between flex-align-center">
+        <image mode="widthFix" src="{{item.avatar}}" style="width:30px" class="mr-10" />
+        <text class="mr-10">{{item.nickname}}</text>
+        <view class="tag tag-authority" wx:if="{{item.identityState==2}}" />
+      </view>
+      <view bindtap="followed" data-index="{{index}}" class="collect-btn {{!item.isFollowed&&'care'}}">
+        {{item.isFollowed?'取消关注':'关注'}}
+      </view>
+    </view>
+  </view>
+</block>

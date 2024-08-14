@@ -1,0 +1,16 @@
+@import "../../app.wxss";
+
+page {
+  padding: 24rpx;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.swiper {
+  height: 300rpx;
+  border-radius: 30rpx;
+}
+
+.swiper image {
+  border-radius: 30rpx;
+}

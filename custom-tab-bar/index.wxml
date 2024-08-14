@@ -1,0 +1,17 @@
+<view class="tabbar">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="tab-item-wrap">
+      <view class="tab-item" bindtap="switchTab" data-index="{{index}}">
+        <view class="checked" wx:if="{{index==selected}}">
+          <image src="{{item.selectedIconPath}}" mode="aspectFill" class="icon-img" />
+        </view>
+        <view class="unchecked" wx:else>
+          <image src="{{item.iconPath}}" mode="aspectFill" class="icon-img" />
+        </view>
+        <view class="tab-name {{index!=selected?'unchecked-color':'checked-color'}}">
+          {{item.text}}
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

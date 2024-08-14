@@ -1,0 +1,149 @@
+<view class="user-page" style="height: calc(100% - {{rect.bottom+10}}px);">
+  <view class="user-info bg-white bor-rad-20 padding-24 mt-24">
+    <view class="flex-align-center">
+      <block>
+        <image src="{{userinfo.avatar}}" class="user-image" bindtap="goUserSetting" data-type="1" mode="aspectFill" />
+        {{userinfo.nickname||''}}
+      </block>
+    </view>
+    <view class="flex-align-center mt-12 ">
+      <block>
+        ID: {{userinfo.id||''}}
+        <view class="copy-id" bindtap="sopyId">复制</view>
+      </block>
+    </view>
+    <view class="flex-between mt-12 flex-align-center">
+      <block>
+        <button class="btn-orange flex-between flex-align-center" open-type="getPhoneNumber">
+          <view>手机号: {{userinfo.mobile||''}}</view>
+          <mp-icon icon="arrow" size="{{10}}" />
+        </button>
+      </block>
+    </view>
+    <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view>城市: {{userinfo.city||''}}</view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view>
+    <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view>联系人: {{userinfo.linker ||''}}</view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view>
+    <!-- <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view>微信: {{userinfo.wxAccount||''}}</view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view> -->
+    <!-- <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view>QQ号: {{userinfo.qqAccount||''}}</view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view> -->
+    <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view class="flex-align-center" style="width: 85%;">
+          <view style="flex:none" class="mr-10">地址:</view>
+          <view class="text-ell">{{userinfo.address||''}}</view>
+        </view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view>
+    <view class="flex-align-center mt-12 ">
+      <block>是否认证: {{userinfo.identityState==2?'是':'否（认证后可上架5个商品）'}}</block>
+    </view>
+    <view class="flex-align-center mt-12 ">
+      <block>
+        <view class="mr-10">会员VIP:</view>
+        <view class="vip-btn bg-{{userinfo.userVip.vipLevel}}" bindtap="goVip">
+          <text wx:if="{{!userinfo.userVip}}">去开通</text>
+          <text wx:if="{{userinfo.userVip.vipLevel==1}}">黄金会员</text>
+          <text wx:if="{{userinfo.userVip.vipLevel==2}}">铂金会员</text>
+          <text wx:if="{{userinfo.userVip.vipLevel==3}}">钻石会员</text>
+          <mp-icon icon="arrow" color="#ffffff" size="{{10}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="mt-20 flex-between flex-align-center text-center bg-white bor-rad-20 padding-24 handle">
+    <view bindtap="goMyCart">
+      <view class="price fw fs-i">{{userinfo.totalMachineNum}}</view>
+      <view>我的商品</view>
+    </view>
+    <view bindtap="goHistory">
+      <image src="/images/lishijilu.png" />
+      <view>浏览记录</view>
+    </view>
+    <view bindtap="goFavorite">
+      <image src="/images/no-shoucang.png" />
+      <view>我的收藏</view>
+    </view>
+    <view bindtap="goUserCollect">
+      <image src="/images/guanzhu.png" />
+      <view>我的关注</view>
+    </view>
+  </view>
+  <view class="bg-white bor-rad-20 padding-24 mt-20">
+    <view class="flex-align-center attestation">
+      认证信息
+      <view wx:if="{{userinfo.identityState>1}}" bindtap="goUserIdentity" data-type='1'>重新编辑</view>
+      <view wx:if="{{userinfo.identityState==1}}">认证中</view>
+      <view wx:if="{{userinfo.identityState==0}}" bindtap="goUserIdentity" data-type='0'>去认证</view>
+    </view>
+    <view wx:if="{{userinfo.identityState!==0&&userinfo.identityState!==3}}" class="user-identity">
+      <view class="flex mt-12">
+        <span>公司名称</span>
+        <span>{{userIdentity.companyName}}</span>
+      </view>
+      <view class="flex mt-12" wx:if="{{userIdentity.identifiedAt}}">
+        <span>认证时间</span>
+        <span>{{userIdentity.identifiedAt}}</span>
+      </view>
+      <view class="flex mt-12">
+        <span>公司介绍</span>
+        <view class="company">
+          <span class="{{!unfoldFlag&&'text-ell'}}">
+            {{userIdentity.brief}}{{userIdentity.brief}}{{userIdentity.brief}}{{userIdentity.brief}}{{userIdentity.brief}}{{userIdentity.brief}}
+          </span>
+          <span class="price" bindtap="unfold">{{unfoldFlag?'收起':'展开'}}</span>
+        </view>
+      </view>
+      <view class="flex mt-12">
+        <span>营业执照</span>
+        <view class="swiper">
+          <image bindtap="preview" data-img="{{userIdentity.businessLicense}}" src="{{userIdentity.businessLicense}}" />
+        </view>
+      </view>
+      <view class="asd mt-12 flex">
+        <span>公司照片</span>
+        <view class="swiper" wx:if="{{userIdentity.photos}}">
+          <swipers list="{{userIdentity.photos}}" />
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{userinfo.identityState===3}}" class="user-identity mt-12">
+      <view class="flex-align-center">
+        <span>状态</span>
+        <span>认证失败</span>
+      </view>
+      <view class="flex-align-center">
+        <span>失败原因</span>
+        <span>{{userIdentity.rejectReason}}</span>
+      </view>
+    </view>
+  </view>
+  <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goSuggest">反馈建议</view>
+  <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goRelation">联系我们</view>
+  <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goTeamwork" wx:if="{{userinfo.userInviter.isInviter}}">
+    合作推广
+  </view>
+</view>
+<!-- 登录提醒弹窗 -->
+<my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">
+  <view>需要登录才能进行后续操作</view>
+  <view>是否前往登录?</view>
+</my-confirm>

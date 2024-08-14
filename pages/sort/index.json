@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swipers": "/components/swipers/swipers"
+  },
+  "navigationBarTitleText": "商品分类"
+}

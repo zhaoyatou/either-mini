@@ -1,0 +1,12 @@
+<view class="mask" wx:if="{{confirmSwitch}}">
+    <view class="main">
+        <view class="head" wx:if="{{title}}">{{title}}</view>
+        <view class="content">
+            <slot></slot>
+        </view>
+        <view class="footer">
+            <view class="btn-cancel" catchtap="hideConfirm" wx:if="{{closeSwitch}}">取消</view>
+            <view class="btn-sure" bindtap="btnSure">{{confirmText}}</view>
+        </view>
+    </view>
+</view>

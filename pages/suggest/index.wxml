@@ -1,0 +1,17 @@
+<block wx:for="{{list}}" wx:key="*this">
+  <view>{{item.updatedAt}}</view>
+  <view class="advice-item">
+    <text>意见建议：{{item.advice}}</text>
+    <view class="images">
+      <view wx:for="{{item.images}}">
+        <image wx:key="*this" src="{{item}}" />
+      </view>
+    </view>
+    <text wx:if="{{item.reply}}">回复：{{item.reply}}</text>
+    <text wx:else class="no-reply">感谢您的建议，工作人员看到后会尽快回复您！</text>
+  </view>
+</block>
+<view class="public-btn text-center" bindtap="goSubmit">
+  <image src="/images/tab/fabu_selete.png" mode="widthFix" />
+  <text class="fz-10">发布建议</text>
+</view>

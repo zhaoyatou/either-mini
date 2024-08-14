@@ -1,0 +1,37 @@
+<scroll-view type="custom" enhanced="{{true}}" show-scrollbar="{{false}}" scroll-y style="width: 100%; height: 100%" bindscrolltolower="getMore" refresher-enabled="{{true}}" bindrefresherrefresh="upList" refresher-triggered="{{refresh}}">
+  <sticky-section>
+    <view class="search mt-24" bind:tap="goSearch">
+      <image src="/images/sousuo.png" class="icon-search"></image>
+      <text>搜索商品</text>
+    </view>
+    <view class="banner" wx:if="{{banner.length}}">
+      <view class="banner-cont">
+        <swipers list="{{banner}}" />
+      </view>
+    </view>
+    <view class="classification">分类</view>
+    <view class="class-list">
+      <block wx:for="{{categoryTopList}}" wx:key="index">
+        <view bindtap="goSort" data-id="{{item.id}}">
+          <image src="{{item.icon}}" mode="widthFix" />
+          <text class="fz-12">{{item.name}}</text>
+        </view>
+      </block>
+      <view bindtap="goSort" data-id="{{''}}" class="all">
+        <image src="/images/ALL.png" mode="aspectFit" />
+        <text class="fz-12">全部分类</text>
+      </view>
+    </view>
+    <view class="top-banner" wx:if="{{topAdveImgs.length}}">
+      <swipers list="{{topAdveImgs}}" />
+    </view>
+    <sticky-header class="sticky-header">
+      <my-screen bindsearchList="searchList" region="{{region}}" typeIndex="{{typeIndex}}" categoryName="{{categoryName}}" />
+    </sticky-header>
+    <grid-view type="masonry" cross-axis-gap="10" main-axis-gap="10" wx:if="{{list.length}}">
+      <view wx:for="{{list}}" wx:key="index">
+        <my-item item="{{item}}"></my-item>
+      </view>
+    </grid-view>
+  </sticky-section>
+</scroll-view>

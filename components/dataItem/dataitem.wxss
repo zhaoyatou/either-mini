@@ -1,0 +1,42 @@
+@import "../../app.wxss";
+
+.item {
+  overflow: hidden;
+  color: #333333;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.cover {
+  position: relative;
+  border-radius: 20rpx;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 90%;
+}
+
+.cover image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cover .flex-between {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10rpx 20rpx;
+  /* background-color: rgba(0, 0, 0, .6); */
+  color: #ffffff;
+}
+
+.user-image {
+  width: 40rpx !important;
+  height: 40rpx !important;
+  border-radius: 40rpx !important;
+  margin-right: 10rpx !important;
+}

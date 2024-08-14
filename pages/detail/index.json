@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "swipers": "/components/swipers/swipers",
+    "my-item": "/components/dataItem/dataitem",
+    "my-confirm": "/components/confirm/confirm"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": 50
+}

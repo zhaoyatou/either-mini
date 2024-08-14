@@ -1,0 +1,42 @@
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swipers {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-item image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.swiper-dots {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-dots view {
+  background-color: rgba(0, 0, 0, .3);
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.swiper-dots view.active {
+  background-color: #1989fa;
+}

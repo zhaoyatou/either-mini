@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "swipers": "/components/swipers/swipers",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "my-item": "/components/dataItem/dataitem",
+    "my-confirm": "/components/confirm/confirm"
+  },
+  "navigationBarTitleText": "用户信息"
+}

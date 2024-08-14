@@ -1,0 +1,23 @@
+<view class="sort-category-nav">
+  <view bind:tap="changeCategory" data-id="" class="nav-item {{activeId==''&&'active'}}">全部分类</view>
+  <view wx:for="{{categoryTopList}}" wx:key="index" bind:tap="changeCategory" data-id="{{item.id}}" class="nav-item {{item.id==activeId&&'active'}}">
+    {{item.name}}
+  </view>
+</view>
+<view class="sort-category-cont">
+  <view wx:if="{{activeId}}" class="sort-category-list">
+    <view wx:for="{{categoryChildList}}" wx:key="index" bind:tap="changeChildCategory" data-item="{{item}}" class="sort-category-item">
+      <image src="{{item.icon}}" />
+      {{item.name}}
+    </view>
+  </view>
+  <view wx:else class="sort-category-list">
+    <view wx:for="{{categoryTopList}}" wx:key="index" bind:tap="changeCategory" data-id="{{item.id}}" class="sort-category-item">
+      <image src="{{item.icon}}" />
+      {{item.name}}
+    </view>
+  </view>
+  <view wx:if="{{banner.length}}" class="bot-banner">
+    <swipers list="{{banner}}" />
+  </view>
+</view>

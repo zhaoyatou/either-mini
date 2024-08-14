@@ -1,0 +1,40 @@
+.picker-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-radius: 10px;
+}
+
+.city,
+.type,
+.sort {
+  border-radius: 20rpx;
+  background-color: #CEE5FF;
+  width: 200rpx;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 24rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #027AFF;
+}
+
+.picker-list .active {
+  background-color: #027AFF;
+  color: #ffffff;
+}
+
+.deg90 {
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+.picker-list .arrow view {
+  background-color: #027AFF !important;
+}
+
+.picker-list .active .arrow view {
+  background-color: #ffffff !important;
+}

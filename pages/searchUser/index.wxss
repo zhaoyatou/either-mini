@@ -1,0 +1,112 @@
+@import "../../app.wxss";
+
+page {
+  padding: 0 24rpx 24rpx 24rpx;
+  position: relative;
+  height: 100vh;
+}
+
+.search-wrap {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.ipt {
+  height: 35px;
+  line-height: 35px;
+  color: #333333;
+  font-size: 24rpx;
+  border: none;
+  outline: none;
+  width: 460rpx;
+}
+
+.input-wrap {
+  background-color: #ffffff;
+  border-radius: 50px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 35px;
+  width: 100%;
+}
+
+.btn-search {
+  height: 60rpx;
+  display: flex;
+  width: 90rpx;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  font-size: 26rpx;
+}
+
+.search-fontsize {
+  color: gray;
+  font-size: 24rpx;
+  line-height: 70rpx;
+}
+
+.h1 {
+  font-size: 30rpx;
+  color: #333333;
+  width: 670rpx;
+  margin: 30rpx auto;
+  font-weight: bold;
+}
+
+.hot view {
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  border-radius: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f8cb68;
+  color: #fff;
+  padding: 3rpx 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.delete {
+  width: 64rpx;
+  height: 70rpx;
+  float: right;
+  margin-right: 35rpx;
+  text-align: center;
+  line-height: 70rpx;
+  margin-top: -15rpx;
+  margin-right: -10rpx;
+  color: #1D87E7;
+  font-size: 28rpx;
+}
+
+.result-con {
+  width: 680rpx;
+  margin: 20rpx auto;
+}
+
+.history view {
+  margin-right: 25rpx;
+  font-size: 24rpx;
+  background-color: #ffffff;
+  border: 2rpx solid #9b9b9b;
+  display: inline-block;
+  border-radius: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #3f3f3f;
+  padding: 3rpx 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.top-banner {
+  width: 100%;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  height: 10vh;
+  overflow: hidden;
+}

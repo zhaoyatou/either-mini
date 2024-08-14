@@ -1,0 +1,22 @@
+<view class="item" wx:if="{{item.id}}" bindtap="goDetil" data-id="{{item.id}}">
+  <view class="cover">
+    <image src="{{item.cover}}" mode="scaleToFill" style="width: 100%;" />
+    <view class="flex-between flex-align-center">
+      <view class="tag tag-new" wx:if="{{item.degreeType==1}}" />
+      <view class="tag tag-old" wx:if="{{item.degreeType==2}}" />
+      <view class="tag tag-beg" wx:if="{{item.degreeType==3}}" />
+    </view>
+  </view>
+  <view class="flex-between mt-12 fz-12 pl-pr-12">
+    <view class="price">价格:{{item.price}}元</view>
+    <view>{{item.city}}</view>
+  </view>
+  <view class="text-ell-2 mt-12 pl-pr-12" style="width:100%;height:36px">{{item.name}}</view>
+  <view class="flex-between flex-align-center mt-12 pl-pr-12" bindtap="goCorporation" data-id="{{item.userId}}">
+    <view class="flex-align-center">
+      <image src="{{item.userAvatar}}" mode="aspectFill" class="user-image" />
+      <view class="fz-12 text-ell" style="width:8em;">{{item.nickname}}</view>
+    </view>
+    <view class="tag tag-authority" wx:if="{{item.isIdentity}}" />
+  </view>
+</view>

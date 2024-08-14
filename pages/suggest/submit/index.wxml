@@ -1,0 +1,22 @@
+<view class="suggest-cont">
+  <view class="start">
+    建议内容
+    <span class="gary">(每天只可发布一次建议哦)</span>
+  </view>
+  <textarea placeholder="功能反馈、增加分类、商品投诉、" name="textarea" value="{{advice}}" bindinput="changeAdvice" />
+</view>
+<view class="suggest-img">
+  <view>上传图片(可不传，最多2张)</view>
+  <view class="imgs">
+    <view class="img-item" wx:for="{{suggestImage}}" wx:key="index">
+      <view class="delete" data-index="{{index}}" data-image="suggestImage" bindtap="delete">
+        x
+      </view>
+      <image src="{{item.src}}" mode="aspectFill" />
+    </view>
+    <view class="xj" bindtap="selectPic" data-image="suggestImage" data-length="2" wx:if="{{suggestImage.length<2}}">
+      <image src="/images/xiangji.png" mode="aspectFit" />
+    </view>
+  </view>
+</view>
+<view class="submit" bindtap="submit">发布</view>
