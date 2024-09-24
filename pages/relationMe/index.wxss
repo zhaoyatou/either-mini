@@ -16,3 +16,25 @@ image {
   text-decoration: underline;
   color: blue;
 }
+
+.contact {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+}
+
+.contact image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0;
+}
+
+.contact button {
+  width: 100rpx;
+  height: 100rpx;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
