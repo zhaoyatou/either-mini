@@ -13,8 +13,8 @@
       <text class="gary">{{city}}</text>
     </view>
     <view class="flex-align-center gary">
-      <view class="mr-10">商品ID：{{id}}</view>
-      <view bindtap="sopyId">复制</view>
+      <view class="mr-10">商品ID:{{id}}</view>
+      <view bindtap="sopyId" class="copy-id">复制</view>
     </view>
     <view class="mt-12">
       <view class="tag tag-new dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==1}}" />
@@ -25,15 +25,12 @@
   </view>
   <view>
     <view class="flex-align-center">
-      <view class="gary mr-20">商品分类</view>
+      <view class="gary mr-20">机械分类</view>
       <view class="mr-20">{{parentCategoryName}}</view>
       <view>/</view>
       <view class="ml-20">{{categoryName}}</view>
     </view>
-    <view wx:if="{{tags}}" class="flex-align-center mt-20">
-      <view class="gary mr-20">商品标签:</view>
-      <view>{{tags}}</view>
-    </view>
+
     <view wx:if="{{degreeType==2}}" class="flex-align-center mt-20">
       <view class="gary mr-20">新旧程度</view>
       <view>{{degreeArr[degree]}}</view>
@@ -41,6 +38,10 @@
     <view wx:if="{{degreeType==2}}" class="flex-align-center mt-20">
       <view class="gary mr-20">购买时间</view>
       <view>{{boughtAt}}</view>
+    </view>
+    <view wx:if="{{tags}}" class="flex-align-center mt-20">
+      <view class="gary mr-20">商品标签:</view>
+      <view>{{tags}}</view>
     </view>
     <view wx:if="{{address}}" class="flex-align-center mt-20">
       <text class="gary mr-20">详细地址</text>

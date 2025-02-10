@@ -2,7 +2,7 @@
   <view class="flex-between flex-align-center">
     <view class="flex-between flex-align-center">
       <image src="{{info.avatar}}" class="mr-10 user-image" mode="aspectFill" />
-      <text>{{info.nickname}}</text>
+      <text class="fz-18">{{info.nickname}}</text>
     </view>
     <view bindtap="followed" data-id="{{info.id}}" class="collect-btn {{info.isFollowed&&'care'}}">
       {{info.isFollowed?'取消关注':'+关注'}}

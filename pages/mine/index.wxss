@@ -6,6 +6,11 @@ page {
   height: 100%;
 }
 
+.user-image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
 .user-page::-webkit-scrollbar {
   width: 0;
 }

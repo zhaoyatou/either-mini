@@ -3,7 +3,7 @@
     <view class="flex-align-center">
       <block>
         <image src="{{userinfo.avatar}}" class="user-image" bindtap="goUserSetting" data-type="1" mode="aspectFill" />
-        {{userinfo.nickname||''}}
+        <span class="fz-18">{{userinfo.nickname||''}}</span>
       </block>
     </view>
     <view class="flex-align-center mt-12 ">

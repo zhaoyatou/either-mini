@@ -68,3 +68,8 @@ page {
   border: 1px solid #027AFF;
   color: #ffffff;
 }
+
+.user-image{
+  width: 60rpx;
+  height: 60rpx;
+}
