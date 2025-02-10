@@ -7,14 +7,13 @@
   <view>
     <view class="flex-between flex-align-end">
       <span class="price">
+        <text class="fz-20">¥</text>
         <text class=" fz-28 fw">{{price}}</text>
-        <text class="fz-12">元</text>
       </span>
       <text class="gary">{{city}}</text>
     </view>
     <view class="flex-align-center gary">
-      <view class="mr-10">ID：{{id}}</view>
-      ｜
+      <view class="mr-10">商品ID：{{id}}</view>
       <view bindtap="sopyId">复制</view>
     </view>
     <view class="mt-12">

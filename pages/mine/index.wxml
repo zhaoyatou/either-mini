@@ -53,9 +53,9 @@
         <mp-icon icon="arrow" size="{{10}}" />
       </block>
     </view>
-    <view class="flex-align-center mt-12 ">
+    <!-- <view class="flex-align-center mt-12 ">
       <block>是否认证: {{userinfo.identityState==2?'是':'否（认证后可上架5个商品）'}}</block>
-    </view>
+    </view> -->
     <view class="flex-align-center mt-12 ">
       <block>
         <view class="mr-10">会员VIP:</view>
@@ -74,22 +74,23 @@
       <view class="price fw fs-i">{{userinfo.totalMachineNum}}</view>
       <view>我的商品</view>
     </view>
-    <view bindtap="goHistory">
-      <image src="/images/lishijilu.png" />
-      <view>浏览记录</view>
-    </view>
-    <view bindtap="goFavorite">
-      <image src="/images/no-shoucang.png" />
-      <view>我的收藏</view>
-    </view>
     <view bindtap="goUserCollect">
       <image src="/images/guanzhu.png" />
       <view>我的关注</view>
     </view>
+    <view bindtap="goFavorite">
+      <image src="/images/no-shoucang.png" />
+      <view>商品收藏</view>
+    </view>
+    <view bindtap="goHistory">
+      <image src="/images/lishijilu.png" />
+      <view>浏览记录</view>
+    </view>
   </view>
   <view class="bg-white bor-rad-20 padding-24 mt-20">
     <view class="flex-align-center attestation">
-      认证信息
+      公司认证
+      <span class="fz-10">(认证后获得5个免费展位)</span>
       <view wx:if="{{userinfo.identityState>1}}" bindtap="goUserIdentity" data-type='1'>重新编辑</view>
       <view wx:if="{{userinfo.identityState==1}}">认证中</view>
       <view wx:if="{{userinfo.identityState==0}}" bindtap="goUserIdentity" data-type='0'>去认证</view>

@@ -21,7 +21,7 @@ Component({
       },
       {
         "pagePath": "/pages/sort/index",
-        "text": "分类",
+        "text": "机械分类",
         "iconPath": "/images/tab/sort.png",
         "selectedIconPath": "/images/tab/sort_selete.png"
       },

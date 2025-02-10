@@ -48,6 +48,7 @@ Page({
       totalCount,
       records
     }) => {
+      console.log(records)
       if (records.length) {
         params.offset += params.limit;
         that.setData({
@@ -59,6 +60,7 @@ Page({
         totalCount,
         refresh: false
       })
+      console.log(this.data.list)
     });
   },
   onShow() {

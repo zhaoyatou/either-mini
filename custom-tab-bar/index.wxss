@@ -47,24 +47,24 @@
 }
 
 .unchecked {
-  height: 36rpx;
-  width: 36rpx;
+  height: 48rpx;
+  width: 48rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .checked {
-  height: 36rpx;
-  width: 36rpx;
+  height: 48rpx;
+  width: 48rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .icon-img {
-  height: 36rpx;
-  width: 36rpx;
+  height: 48rpx;
+  width: 48rpx;
 }
 
 .unchecked-color {

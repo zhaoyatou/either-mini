@@ -8,7 +8,7 @@
   <view class="content" style="height:calc(100% - {{60}}px)">
     <view class="goods-detail">
       <view class="item">
-        <span class="star fz-16 fw">商品信息</span>
+        <span class="star fz-16 fw tit-color">商品信息</span>
       </view>
       <view class="item">
         <span class="star fw">商品名称</span>
@@ -20,16 +20,10 @@
         元
       </view>
       <view class="item">
-        <span class="star fw">设备类型</span>
-        <view wx:for="{{typeList}}" wx:key="item" bindtap="changeType" data-value="{{item.value}}" class="{{product.degreeType==item.value&&'active'}} type-btn">
-          {{item.label}}
-        </view>
-      </view>
-      <view class="item">
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{sortIndex}}" range="{{sortList}}" range-key="name">
           <view class="sort">
             <view>
-              <span class="star fw">分类</span>
+              <span class="star fw">机械分类</span>
               <text wx:if="{{!categoryName}}" class="default-color">请选择分类</text>
               {{categoryName}}
             </view>
@@ -37,6 +31,13 @@
           </view>
         </picker>
       </view>
+      <view class="item">
+        <span class="star fw">新旧类型</span>
+        <view wx:for="{{typeList}}" wx:key="item" bindtap="changeType" data-value="{{item.value}}" class="{{product.degreeType==item.value&&'active'}} type-btn">
+          {{item.label}}
+        </view>
+      </view>
+     
       <view class="item">
         <span class="fw">标签</span>
         <input type="text" value="{{product.tags}}" bindinput="inputChange" placeholder="商品品牌、型号信息" data-name="product.tags" />

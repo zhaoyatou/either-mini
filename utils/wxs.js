@@ -14,9 +14,9 @@ if (!env) {
 }
 const baseApi = {
   // 开发版 
-  develop: develop,
+  develop: release,
   // 体验版
-  trial: develop,
+  trial: release,
   // 正式版
   release
 };

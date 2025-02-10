@@ -50,7 +50,8 @@
     </view>
   </view>
   <view class="unfold-btn {{unfoldFlag&&'active'}}" bindtap="unfold">
-    <mp-icon icon="arrow" size="{{20}}" />
+    <!-- <mp-icon icon="arrow" size="{{20}}" /> -->
+    <image src="../../images/unfold.png" mode="widthFix" style="width: 30px;"/>
   </view>
 </view>
 <view class="mt-24 mb-24" wx:if="{{list.length}}">他的商品</view>

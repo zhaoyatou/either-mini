@@ -31,13 +31,13 @@ page {
 
 .unfold-btn {
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   left: 50%;
-  transform: translateX(-50%) rotate(90deg);
+  transform: translateX(-50%) rotate(-180deg);
 }
 
 .unfold-btn.active {
-  transform: translateX(-50%) rotate(-90deg);
+  transform: translateX(-50%);
 }
 
 .identity-cont>view span:first-of-type {

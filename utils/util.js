@@ -56,10 +56,10 @@ const formatDate = (time, fmt = "yyyy-MM-dd hh:mm:ss") => {
 }
 const formatPrice = (price) => {
   // 将价格转换为字符串并去除可能存在的逗号
-  price = price.toString().replace(',', '');
+  // price = price.toString().replace(',', '');
 
   // 使用正则表达式添加逗号
-  price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  // price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   return price;
 }

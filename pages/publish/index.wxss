@@ -64,6 +64,9 @@ page {
   padding: 0 16px;
 }
 
+.tit-color {
+  color: #3E64FF;
+}
 
 .item {
   border-bottom: 1px #E6E6E6 solid;

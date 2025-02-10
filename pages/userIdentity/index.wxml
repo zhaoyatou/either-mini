@@ -8,8 +8,8 @@
         <input type="text" value="{{companyName}}" bindinput="inputChange" placeholder="认证通过后会成为您的昵称" data-name="companyName" />
       </view>
       <view class="item height-auto">
-        <span>公司简介</span>
-        <textarea style="height:5em" maxlength="500" value="{{brief}}" bindinput="inputChange" placeholder="请简述公司介绍" data-name="brief" />
+        <span>公司介绍</span>
+        <textarea style="height:5em" maxlength="500" value="{{brief}}" bindinput="inputChange" placeholder="请简述您的公司～(不超过500字)" data-name="brief" />
       </view>
       <view class="item height-auto">
         <span class="star">营业执照</span>
@@ -28,7 +28,8 @@
         </view>
       </view>
       <view class="item height-auto">
-        <span class="star">法人身份证</span>
+        <view class="star">法人身份证<span class="fz-10">(正面，仅认证使用不展示)</span>
+        </view>
         <view class="detail-imgs">
           <view class="xj" bindtap="selectPic" data-image="identityCardImage" data-length="1" wx:if="{{!identityCardImage.length}}">
             <image src="/images/xiangji.png" mode="aspectFit" />
