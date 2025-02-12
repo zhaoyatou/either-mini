@@ -11,7 +11,7 @@
             {{item.notBtnTxt}}
           </view>
           <view class="vip-expire fz-12" style="color:{{item.btnBgC}}" wx:if="{{item.isVip}}">
-            {{item.expire}}
+            到期时间:{{item.expire}}
           </view>
           <view class="vip-expire fz-12" style="color:{{item.btnBgC}}" wx:if="{{!item.isVip}}">
             {{item.expire}}

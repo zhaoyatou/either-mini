@@ -74,7 +74,7 @@ swiper {
 }
 
 .tag.tag-person {
-  background-color: #7E8CAA;
+  background-color: #9fa9c0;
   color: #ffffff;
   font-weight: bold;
 }
@@ -84,7 +84,8 @@ swiper {
 }
 
 .tag.tag-merchant {
-  background: linear-gradient(to right, rgb(165, 270, 252), rgb(126, 174, 268));
+  background: linear-gradient(to right, rgb(136, 219, 219), rgb(126, 174, 250));
+  /* background: linear-gradient(to right, rgb(165, 270, 252), rgb(126, 174, 268)); */
   color: #ffffff;
   font-weight: bold;
 }

@@ -3,7 +3,7 @@
   <view class="swiper-bg"></view>
 </view>
 <mp-icon icon="arrow" bindtap="goBack" class="nav-bar" style="top:{{rect.top}}px;height:{{rect.height}}px" color="#ffffff" size="{{18}}" />
-<view class="cont" style="margin-top:calc({{(rect.top+rect.height+274)*2}}rpx)">
+<view class="cont" style="margin-top:calc({{(rect.top+rect.height+300)*2}}rpx)">
   <view>
     <view class="flex-between flex-align-end">
       <span class="price">
@@ -16,7 +16,7 @@
       <view class="tag tag-new mr-10" wx:if="{{degreeType==1}}" />
       <view class="tag tag-old mr-10" wx:if="{{degreeType==2}}" />
       <view class="tag tag-beg mr-10" wx:if="{{degreeType==3}}" />
-      <view class="mr-10">商品ID:{{id}}</view>
+      <view class="mr-10">ID:{{id}}</view>
       <view bindtap="sopyId" class="copy-id">复制</view>
     </view>
     <view class="mt-12">
@@ -53,7 +53,7 @@
       <text>{{carriage}}</text>
     </view>
   </view>
-  <view>
+  <view style="padding: 20rpx 24rpx;">
     <view class="flex-between flex-align-center">
       <view class="flex-align-center" bindtap="goCorporation">
         <image src="{{info.avatar}}" mode="aspectFill" class="user-image" />
