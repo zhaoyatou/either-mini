@@ -89,7 +89,7 @@
   </view>
   <view class="bg-white bor-rad-20 padding-24 mt-20">
     <view class="flex-align-center attestation">
-      公司认证
+      商家认证
       <span class="fz-10">(认证后获得5个免费展位)</span>
       <view wx:if="{{userinfo.identityState>1}}" bindtap="goUserIdentity" data-type='1'>重新编辑</view>
       <view wx:if="{{userinfo.identityState==1}}">认证中</view>
