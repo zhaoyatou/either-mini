@@ -84,7 +84,7 @@ swiper {
 }
 
 .tag.tag-merchant {
-  background-color: #027AFF;
+  background: linear-gradient(to right, rgb(165, 270, 252), rgb(126, 174, 268));
   color: #ffffff;
   font-weight: bold;
 }
@@ -94,7 +94,7 @@ swiper {
 }
 
 .tag.tag-gold {
-  background-color: #F08700;
+  background: linear-gradient(to right, rgb(250, 230, 163), rgb(211, 189, 117));
   color: #ffffff;
   font-weight: bold;
   width: 120rpx;
@@ -105,7 +105,7 @@ swiper {
 }
 
 .tag.tag-platinum {
-  background-color: #D75C36;
+  background: linear-gradient(to right, rgb(250, 167, 106), rgb(246, 139, 92));
   color: #ffffff;
   font-weight: bold;
   width: 120rpx;
@@ -116,7 +116,8 @@ swiper {
 }
 
 .tag.tag-diamond {
-  background-color: #3650BF;
+  /* background-color: #3650BF; */
+  background: linear-gradient(to right, rgb(170, 170, 237), rgb(135, 129, 225));
   color: #ffffff;
   font-weight: bold;
   width: 120rpx;
