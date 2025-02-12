@@ -12,14 +12,15 @@
       </span>
       <text class="gary">{{city}}</text>
     </view>
-    <view class="flex-align-center gary">
+    <view class="flex-align-center gary flex">
+      <view class="tag tag-new mr-10" wx:if="{{degreeType==1}}" />
+      <view class="tag tag-old mr-10" wx:if="{{degreeType==2}}" />
+      <view class="tag tag-beg mr-10" wx:if="{{degreeType==3}}" />
       <view class="mr-10">商品ID:{{id}}</view>
       <view bindtap="sopyId" class="copy-id">复制</view>
     </view>
     <view class="mt-12">
-      <view class="tag tag-new dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==1}}" />
-      <view class="tag tag-old dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==2}}" />
-      <view class="tag tag-beg dis-in-block mr-10" style="top:8rpx" wx:if="{{degreeType==3}}" />
+
       <text class="fz-18 fw">{{name}}</text>
     </view>
   </view>
@@ -63,13 +64,18 @@
           </view>
         </view>
       </view>
-      <view class="collect-btn" bindtap="followed" wx:if="{{info.identity.identifiedAt&&!info.isFollowed}}">
+      <!-- <view class="collect-btn" bindtap="followed" wx:if="{{info.identity.identifiedAt&&!info.isFollowed}}">
         +关注
       </view>
       <view class="collect-btn care" bindtap="followed" wx:if="{{info.identity.identifiedAt&&info.isFollowed}}">
         取消关注
       </view>
-      <view class="collect-btn care" wx:if="{{!info.identity.identifiedAt}}">未认证</view>
+      <view class="collect-btn care" wx:if="{{!info.identity.identifiedAt}}">未认证</view> -->
+      <view class="tag tag-gold" wx:if="{{info.userVip&&info.userVip.vipLevel==1}}" />
+      <view class="tag tag-platinum" wx:if="{{info.userVip&&info.userVip.vipLevel==2}}" />
+      <view class="tag tag-diamond" wx:if="{{info.userVip&&info.userVip.vipLevel==3}}" />
+      <view class="tag tag-merchant" wx:if="{{!info.userVip&&info.identity.identifiedAt}}" />
+      <view class="tag tag-person" wx:if="{{!info.userVip&&!info.identity.identifiedAt}}" />
     </view>
   </view>
   <view class="tab-list">

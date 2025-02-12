@@ -15,8 +15,13 @@
   <view class="flex-between flex-align-center mt-12 pl-pr-12" bindtap="goCorporation" data-id="{{item.userId}}">
     <view class="flex-align-center">
       <image src="{{item.userAvatar}}" mode="aspectFill" class="user-image" />
-      <view class="fz-12 text-ell" style="width:8em;">{{item.nickname}}</view>
+      <view class="fz-12 text-ell" style="width:6em;">{{item.nickname}}</view>
     </view>
-    <view class="tag tag-authority" wx:if="{{item.isIdentity}}" />
+
+    <view class="tag tag-gold" wx:if="{{item.userVip&&item.userVip.vipLevel==1}}" />
+    <view class="tag tag-platinum" wx:if="{{item.userVip&&item.userVip.vipLevel==2}}" />
+    <view class="tag tag-diamond" wx:if="{{item.userVip&&item.userVip.vipLevel==3}}" />
+    <view class="tag tag-merchant" wx:if="{{!item.userVip&&item.isIdentity}}" />
+    <view class="tag tag-person" wx:if="{{!item.userVip&&!item.isIdentity}}" />
   </view>
 </view>

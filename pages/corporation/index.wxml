@@ -4,9 +4,16 @@
       <image src="{{info.avatar}}" class="mr-10 user-image" mode="aspectFill" />
       <text class="fz-18">{{info.nickname}}</text>
     </view>
-    <view bindtap="followed" data-id="{{info.id}}" class="collect-btn {{info.isFollowed&&'care'}}">
+    <view bindtap="followed" data-id="{{info.id}}" wx:if="{{info.identityState==2}}" class="collect-btn {{info.isFollowed&&'care'}}">
       {{info.isFollowed?'取消关注':'+关注'}}
     </view>
+  </view>
+  <view class="mt-20 flex flex-align-center">是否认证：
+    <view class="tag tag-gold" wx:if="{{item.userVip&&item.userVip.vipLevel==1}}" />
+    <view class="tag tag-platinum" wx:if="{{item.userVip&&item.userVip.vipLevel==2}}" />
+    <view class="tag tag-diamond" wx:if="{{item.userVip&&item.userVip.vipLevel==3}}" />
+    <view class="tag tag-merchant" wx:if="{{!item.userVip&&item.identityState==2}}" />
+    <view class="tag tag-person" wx:if="{{!item.userVip&&item.isIdentity!==2}}" />
   </view>
   <view class="mt-20">城市：{{info.city||''}}</view>
   <view class="mt-20 flex-align-center">
@@ -19,7 +26,7 @@
   </view>
   <!-- <view class="mt-20">微信：{{info.wxAccount||''}}</view> -->
   <!-- <view class="mt-20">QQ：{{info.qqAccount||''}}</view> -->
-  <view class="mt-20">是否认证：{{info.identityState==2?'是':'否'}}</view>
+
 </view>
 <view class="mt-20" wx:if="{{info.identityState==2}}">认证信息</view>
 <view class="bg-white bor-rad-20 padding-24 user-identity {{unfoldFlag&&'unfold'}}" wx:if="{{info.identityState==2}}">
@@ -51,7 +58,7 @@
   </view>
   <view class="unfold-btn {{unfoldFlag&&'active'}}" bindtap="unfold">
     <!-- <mp-icon icon="arrow" size="{{20}}" /> -->
-    <image src="../../images/unfold.png" mode="widthFix" style="width: 30px;"/>
+    <image src="../../images/unfold.png" mode="widthFix" style="width: 30px;" />
   </view>
 </view>
 <view class="mt-24 mb-24" wx:if="{{list.length}}">他的商品</view>

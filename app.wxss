@@ -73,6 +73,59 @@ swiper {
   content: "认证";
 }
 
+.tag.tag-person {
+  background-color: #7E8CAA;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.tag.tag-person::after {
+  content: "个人";
+}
+
+.tag.tag-merchant {
+  background-color: #027AFF;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.tag.tag-merchant::after {
+  content: "商家";
+}
+
+.tag.tag-gold {
+  background-color: #F08700;
+  color: #ffffff;
+  font-weight: bold;
+  width: 120rpx;
+}
+
+.tag.tag-gold::after {
+  content: "黄金商家";
+}
+
+.tag.tag-platinum {
+  background-color: #D75C36;
+  color: #ffffff;
+  font-weight: bold;
+  width: 120rpx;
+}
+
+.tag.tag-platinum::after {
+  content: "铂金商家";
+}
+
+.tag.tag-diamond {
+  background-color: #3650BF;
+  color: #ffffff;
+  font-weight: bold;
+  width: 120rpx;
+}
+
+.tag.tag-diamond::after {
+  content: "钻石商家";
+}
+
 .price {
   color: #FF5A5A;
 }
@@ -302,6 +355,10 @@ swiper {
 
 .theme-color {
   color: #027AFF;
+}
+
+.first-line-indent {
+  text-indent: 2em;
 }
 
 .gary {
