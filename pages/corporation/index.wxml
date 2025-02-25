@@ -9,11 +9,11 @@
     </view>
   </view>
   <view class="mt-20 flex flex-align-center">是否认证：
-    <view class="tag tag-gold" wx:if="{{item.userVip&&item.userVip.vipLevel==1}}" />
-    <view class="tag tag-platinum" wx:if="{{item.userVip&&item.userVip.vipLevel==2}}" />
-    <view class="tag tag-diamond" wx:if="{{item.userVip&&item.userVip.vipLevel==3}}" />
-    <view class="tag tag-merchant" wx:if="{{!item.userVip&&item.identityState==2}}" />
-    <view class="tag tag-person" wx:if="{{!item.userVip&&item.isIdentity!==2}}" />
+    <view class="tag tag-gold" wx:if="{{info.userVip&&info.userVip.vipLevel==1}}" />
+    <view class="tag tag-platinum" wx:if="{{info.userVip&&info.userVip.vipLevel==2}}" />
+    <view class="tag tag-diamond" wx:if="{{info.userVip&&info.userVip.vipLevel==3}}" />
+    <view class="tag tag-merchant" wx:if="{{!info.userVip&&info.identityState==2}}" />
+    <view class="tag tag-person" wx:if="{{!info.userVip&&info.identityState!==2}}" />
   </view>
   <view class="mt-20">城市：{{info.city||''}}</view>
   <view class="mt-20 flex-align-center">
