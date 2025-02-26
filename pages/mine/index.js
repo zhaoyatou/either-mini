@@ -203,12 +203,32 @@ Page({
   },
   getPhoneNumber(e) {
     let that = this;
+    console.log(e)
     if (e.detail.errMsg == 'getPhoneNumber:ok') {
       let mobile_code = e.detail.code;
       that.lastStep({
         mobile_code: mobile_code,
       })
+    } else {
+      toast("获取错误请重试～")
     }
+  },
+  handleAgreePrivacyAuthorization() {
+    wx.getPrivacySetting({
+      success: res => {
+        console.log(res)
+        if (res.needAuthorization) {
+          // 需要弹出隐私协议
+          wx.openPrivacyContract({
+            success: () => {}, // 打开成功
+            fail: () => {}, // 打开失败
+            complete: () => {}
+          })
+        } else {}
+      },
+      fail: () => {},
+      complete: () => {}
+    })
   },
   lastStep(obj) {
     let that = this;

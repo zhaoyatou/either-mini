@@ -14,7 +14,7 @@
     </view>
     <view class="flex-between mt-12 flex-align-center">
       <block>
-        <button class="btn-orange flex-between flex-align-center" open-type="getPhoneNumber">
+        <button class="btn-orange flex-between flex-align-center" open-type="getPhoneNumber|agreePrivacyAuthorization" bindgetphonenumber="getPhoneNumber" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">
           <view>手机号: {{userinfo.mobile||''}}</view>
           <mp-icon icon="arrow" size="{{10}}" />
         </button>
