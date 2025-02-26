@@ -24,7 +24,7 @@ Page({
             code: code,
             inviteUserId: app.globalData.invite_user_id,
             nickname: "微信用户",
-            avatar: 'https://cdn.eithergo.com/image/2024-01-05/1_w_512_h_512_1704439373_3688.jpg',
+            avatar: 'https://cdn.firemachine.cn/image/2024-01-05/1_w_512_h_512_1704439373_3688.jpg',
           },
         }).then(res => {
           if (res.code == 1) {

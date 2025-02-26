@@ -7,7 +7,7 @@ import {
 Page({
   data: {
     vipList: [{
-        image: 'https://cdn.eithergo.com/image/2024-03-18/1_w_981_h_516_1710757266_cfdf.jpg',
+        image: 'https://cdn.firemachine.cn/image/2024-03-18/1_w_981_h_516_1710757266_cfdf.jpg',
         btnTxt: "已获得",
         btnBgC: "#7E8CAA",
         isVip: true,
@@ -16,7 +16,7 @@ Page({
 
       },
       {
-        image: 'https://cdn.eithergo.com/image/2024-03-18/1_w_981_h_519_1710757323_344d.jpg',
+        image: 'https://cdn.firemachine.cn/image/2024-03-18/1_w_981_h_519_1710757323_344d.jpg',
         notBtnTxt: "去认证",
         btnTxt: "已认证",
         btnBgC: "#027AFF",
@@ -25,7 +25,7 @@ Page({
         rights: ['店铺服务', '免费上架5个商品']
       },
       {
-        image: 'https://cdn.eithergo.com/image/2024-03-18/1_w_981_h_519_1710757338_c33e.jpg',
+        image: 'https://cdn.firemachine.cn/image/2024-03-18/1_w_981_h_519_1710757338_c33e.jpg',
         notBtnTxt: "去开通",
         btnTxt: "已开通",
         btnBgC: "#F08700",
@@ -35,7 +35,7 @@ Page({
         rights: ['店铺服务', '免费上架10个商品', '商品曝光值+10', '更多权益开放中']
       },
       {
-        image: 'https://cdn.eithergo.com/image/2024-03-18/1_w_981_h_522_1710757354_d1f1.jpg',
+        image: 'https://cdn.firemachine.cn/image/2024-03-18/1_w_981_h_522_1710757354_d1f1.jpg',
         notBtnTxt: "去开通",
         btnTxt: "已开通",
         btnBgC: "#D75C36",
@@ -45,7 +45,7 @@ Page({
         rights: ['店铺服务', '免费上架20个商品', '商品曝光值+25', '更多权益开放中']
       },
       {
-        image: 'https://cdn.eithergo.com/image/2024-03-18/1_w_981_h_522_1710757378_4fcf.jpg',
+        image: 'https://cdn.firemachine.cn/image/2024-03-18/1_w_981_h_522_1710757378_4fcf.jpg',
         notBtnTxt: "去开通",
         btnTxt: "已开通",
         btnBgC: "#3650BF",

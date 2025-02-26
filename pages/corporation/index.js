@@ -136,9 +136,9 @@ Page({
     wxs.request({
       url: `api/v1/user/${that.data.id}/call`,
       method: 'post'
-    }).then(() => {
+    }).then(({data}) => {
       wx.makePhoneCall({
-        phoneNumber: String(that.data.info.mobile)
+        phoneNumber: String(data)
       })
     })
   },

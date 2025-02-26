@@ -155,14 +155,14 @@ Page({
     return {
       title: "甄火机械网",
       path: `/pages/index/index?invite_user_id=${getStorage('userid')}`,
-      imageUrl: "https://cdn.eithergo.com/image/2024-03-28/1_w_660_h_528_1711595620_6fbb.jpg"
+      imageUrl: "https://cdn.firemachine.cn/image/2024-03-28/1_w_660_h_528_1711595620_6fbb.jpg"
     }
   },
   onShareTimeline() {
     return {
       title: "甄火机械网",
       path: `/pages/index/index?invite_user_id=${getStorage('userid')}`,
-      imageUrl: "https://cdn.eithergo.com/image/2024-03-28/1_w_660_h_528_1711595620_6fbb.jpg"
+      imageUrl: "https://cdn.firemachine.cn/image/2024-03-28/1_w_660_h_528_1711595620_6fbb.jpg"
     }
   },
 

@@ -4,9 +4,9 @@ import {
   toast
 } from "./utilities"
 
-const develop = 'https://api-dev.eithergo.com/' // 开发
-const pre = 'https://api.eithergo.com/' // 预发
-const release = 'https://api.eithergo.com/' // 正式
+const develop = 'https://api-dev.firemachine.cn/' // 开发
+const pre = 'https://api.firemachine.cn/' // 预发
+const release = 'https://api.firemachine.cn/' // 正式
 
 const env = __wxConfig.envVersion
 if (!env) {

@@ -157,9 +157,11 @@ Page({
     wxs.request({
       url: `api/v1/market/machine/${that.data.id}/add/calls`,
       method: 'post'
-    }).then(() => {
+    }).then(({
+      data
+    }) => {
       wx.makePhoneCall({
-        phoneNumber: String(that.data.linkerMobile)
+        phoneNumber: String(data)
       })
     })
   },

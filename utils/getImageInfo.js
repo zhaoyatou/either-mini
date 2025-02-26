@@ -14,7 +14,7 @@ const getImageInfo = async (arr) => {
     let keys = [];
     for (let i = 0; i < arr.length; i++) {
       let src = arr[i].src;
-      if (!src.startsWith('https://cdn.eithergo.com')) {
+      if (!src.startsWith('https://cdn.firemachine.cn')) {
         keys.push(await getImageInfoItem(src))
       } else {
         keys.push(src)
@@ -41,7 +41,7 @@ const getImageInfoItem = (src) => {
             region: 'ECN',
             key: filename,
             uptoken: token,
-            domain: 'https://cdn.eithergo.com/'
+            domain: 'https://cdn.firemachine.cn/'
           };
           qiniuUploader.upload(src, (data) => {
             resolve(data.key)

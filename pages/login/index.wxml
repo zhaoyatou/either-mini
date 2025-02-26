@@ -1,6 +1,6 @@
 <view class="main">
   <view class="login-icon">
-    <image src="https://cdn.eithergo.com/image/2024-02-22/1_w_446_h_364_1708591420_a1fd.jpg" mode="aspectFit"></image>
+    <image src="https://cdn.firemachine.cn/image/2024-02-22/1_w_446_h_364_1708591420_a1fd.jpg" mode="aspectFit"></image>
   </view>
   <button wx:if="{{ isSelected==false}}" class="btn-orange" bindtap="agree">授权登录</button>
   <button wx:if="{{ isSelected==true}}" class="btn-orange" bindtap="stepOneLogin">授权登录</button>
