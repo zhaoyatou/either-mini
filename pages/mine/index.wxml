@@ -20,7 +20,7 @@
         </button>
       </block>
     </view>
-    <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+    <!-- <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
       <block>
         <view>城市: {{userinfo.city||''}}</view>
         <mp-icon icon="arrow" size="{{10}}" />
@@ -31,7 +31,7 @@
         <view>联系人: {{userinfo.linker ||''}}</view>
         <mp-icon icon="arrow" size="{{10}}" />
       </block>
-    </view>
+    </view> -->
     <!-- <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
       <block>
         <view>微信: {{userinfo.wxAccount||''}}</view>
@@ -47,12 +47,20 @@
     <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
       <block>
         <view class="flex-align-center" style="width: 85%;">
+          <view style="flex:none" class="mr-10">编辑资料</view>
+        </view>
+        <mp-icon icon="arrow" size="{{10}}" />
+      </block>
+    </view>
+    <!-- <view class="flex-between mt-12 flex-align-center" bindtap="goUserSetting">
+      <block>
+        <view class="flex-align-center" style="width: 85%;">
           <view style="flex:none" class="mr-10">地址:</view>
           <view class="text-ell">{{userinfo.address||''}}</view>
         </view>
         <mp-icon icon="arrow" size="{{10}}" />
       </block>
-    </view>
+    </view> -->
     <!-- <view class="flex-align-center mt-12 ">
       <block>是否认证: {{userinfo.identityState==2?'是':'否（认证后可上架5个商品）'}}</block>
     </view> -->
@@ -137,11 +145,12 @@
       </view>
     </view>
   </view>
-  <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goSuggest">反馈建议</view>
   <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goRelation">联系我们</view>
   <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goTeamwork" wx:if="{{userinfo.userInviter.isInviter}}">
     合作推广
   </view>
+  <view class="mt-20  bg-white bor-rad-20 padding-24" bindtap="goSuggest">反馈建议</view>
+
 </view>
 <!-- 登录提醒弹窗 -->
 <my-confirm switch="{{loginConfirmSwitch}}" bind:sure="sure" bind:hideConfirm="hideConfirm">

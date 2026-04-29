@@ -3,7 +3,7 @@
     <view class="search-wrap mt-24">
       <view class="input-wrap">
         <image src="/images/sousuo.png" class="icon-search"></image>
-        <input placeholder="{{params.name?params.name:'搜索商品'}}" placeholder-class="search-fontsize" class="search-fontsize" type="text" confirm-type="search" bindconfirm='setSearchStorage' value="{{params.name}}" class="ipt" />
+        <input placeholder="{{params.name?params.name:'搜索设备'}}" placeholder-class="search-fontsize" class="search-fontsize" type="text" confirm-type="search" bindconfirm='setSearchStorage' value="{{params.name}}" class="ipt" />
       </view>
     </view>
     <view class="top-banner">

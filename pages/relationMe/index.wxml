@@ -7,9 +7,9 @@
   <view>如果您有以上需求，点击右下角“客服”按钮联系我们吧！</view>
   <view>了解更多信息请查看我们的微信公众号：甄火机械网。</view>
 </view> -->
-<image src="https://cdn.firemachine.cn/image/2025-02-11/2_w_1206_h_2388_1739257054_d06d.jpg" style="width: 100%;" mode="widthFix" />
-<image src="https://cdn./image/2025-02-11/2_w_1062_h_2366_1739255896_b6a3.jpg" style="width: 100%;" mode="widthFix" bindtap="previewImage" />
-<image src="https://cdn.firemachine.cn/image/2025-02-11/2_w_1058_h_2334_1739255924_1c19.jpg" style="width: 100%;" mode="widthFix" bindtap="previewImage" />
+<image src="https://cdn.firemachine.cn/image/2026-04-29/2_w_1114_h_2292_1777440949_aa2e.jpg" style="width: 100%;" mode="widthFix" />
+<image src="https://cdn.firemachine.cn/image/2026-04-29/2_w_1014_h_2296_1777441079_4a95.jpg" style="width: 100%;" mode="widthFix" bindtap="previewImage" />
+<image src="https://cdn.firemachine.cn/image/2026-04-29/2_w_1014_h_2302_1777441117_4166.jpg" style="width: 100%;" mode="widthFix" bindtap="previewImage" />
 
 
 <!-- <view class="mt-20 fz-18">

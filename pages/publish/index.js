@@ -100,7 +100,9 @@ Page({
           userinfo,
           region: [],
           ['product.linkerMobile']: userinfo.mobile,
-          ['product.city']: userinfo.city
+          ['product.city']: userinfo.city,
+          ['product.address']: userinfo.address,
+          ['product.linker']: userinfo.linker
         })
       })
     }

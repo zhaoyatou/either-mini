@@ -2,7 +2,7 @@
   <view class="publish-bg"></view>
   <!-- <view class="navbar" style="height:{{rect.height}}px;top:{{rect.top}}px">发布商品</view> -->
   <view class="publish-tips">
-    您还可上架{{userinfo.allowMachineNum||'?'}}件商品，发布通过审核后自动上架
+    您还可免费上架{{userinfo.allowMachineNum||'?'}}件商品，发布后审核通过自动上架
     <image src="/images/bangzhu.png" class="rule" bindtap="hideRule" />
   </view>
   <view class="content" style="height:calc(100% - {{60}}px)">

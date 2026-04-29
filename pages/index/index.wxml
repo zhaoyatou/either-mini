@@ -2,7 +2,7 @@
   <sticky-section>
     <view class="search mt-24" bind:tap="goSearch">
       <image src="/images/sousuo.png" class="icon-search"></image>
-      <text>搜索商品</text>
+      <text>搜索设备</text>
     </view>
     <view class="banner" wx:if="{{banner.length}}">
       <view class="banner-cont">

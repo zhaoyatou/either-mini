@@ -43,7 +43,7 @@
       <span>公司介绍：</span>
       <span>{{info.identity.brief}}</span>
     </view>
-    <view class="flex mt-12">
+    <view class="flex mt-12" style="display: none;">
       <span>营业执照：</span>
       <view class="swiper">
         <image bindtap="preview" data-img="{{info.identity.businessLicense}}" src="{{info.identity.businessLicense}}" />
